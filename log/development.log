@@ -1,0 +1,227 @@
+Started GET "/" for 127.0.0.1 at 2018-01-05 15:41:51 -0500
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/kirill/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/railties-5.1.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/kirill/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/railties-5.1.4/lib/rails/templates/rails/welcome/index.html.erb (4.1ms)
+Completed 200 OK in 703ms (Views: 31.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-01-05 15:41:53 -0500
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/kirill/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/railties-5.1.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/kirill/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/railties-5.1.4/lib/rails/templates/rails/welcome/index.html.erb (5.2ms)
+Completed 200 OK in 8ms (Views: 6.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-01-05 15:47:36 -0500
+Processing by MainController#index as HTML
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (1.4ms)
+Completed 500 Internal Server Error in 6253ms
+
+
+  
+ActionView::Template::Error (couldn't find file 'jquery' with type 'application/javascript'
+Checked in these paths: 
+  /home/kirill/LoanCalculator/app/app/assets/config
+  /home/kirill/LoanCalculator/app/app/assets/images
+  /home/kirill/LoanCalculator/app/app/assets/javascripts
+  /home/kirill/LoanCalculator/app/app/assets/stylesheets
+  /home/kirill/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /home/kirill/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actioncable-5.1.4/lib/assets/compiled
+  /home/kirill/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionview-5.1.4/lib/assets/compiled
+  /home/kirill/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/turbolinks-source-5.0.3/lib/assets/javascripts
+  /home/kirill/LoanCalculator/app/node_modules
+  /home/kirill/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/bootstrap-sass-3.2.0.2/assets/stylesheets
+  /home/kirill/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/bootstrap-sass-3.2.0.2/assets/javascripts
+  /home/kirill/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/bootstrap-sass-3.2.0.2/assets/fonts
+  /home/kirill/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/bootstrap-sass-3.2.0.2/assets/images):
+    4:     <title>Approve-A-Loan</title>
+    5:     <%= csrf_meta_tags %>
+    6: 
+    7:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    8:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    9:   </head>
+   10: 
+  
+app/assets/javascripts/application.js:13
+app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb___3373069057888002592_47138288476640'
+Started GET "/" for 127.0.0.1 at 2018-01-05 15:47:54 -0500
+Processing by MainController#index as HTML
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (2.2ms)
+Completed 500 Internal Server Error in 359ms
+
+
+  
+ActionView::Template::Error (couldn't find file 'jquery' with type 'application/javascript'
+Checked in these paths: 
+  /home/kirill/LoanCalculator/app/app/assets/config
+  /home/kirill/LoanCalculator/app/app/assets/images
+  /home/kirill/LoanCalculator/app/app/assets/javascripts
+  /home/kirill/LoanCalculator/app/app/assets/stylesheets
+  /home/kirill/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /home/kirill/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actioncable-5.1.4/lib/assets/compiled
+  /home/kirill/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionview-5.1.4/lib/assets/compiled
+  /home/kirill/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/turbolinks-source-5.0.3/lib/assets/javascripts
+  /home/kirill/LoanCalculator/app/node_modules
+  /home/kirill/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/bootstrap-sass-3.2.0.2/assets/stylesheets
+  /home/kirill/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/bootstrap-sass-3.2.0.2/assets/javascripts
+  /home/kirill/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/bootstrap-sass-3.2.0.2/assets/fonts
+  /home/kirill/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/bootstrap-sass-3.2.0.2/assets/images):
+    4:     <title>Approve-A-Loan</title>
+    5:     <%= csrf_meta_tags %>
+    6: 
+    7:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    8:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    9:   </head>
+   10: 
+  
+app/assets/javascripts/application.js:13
+app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb___1632831613906880198_47323189032560'
+Started GET "/" for 127.0.0.1 at 2018-01-05 15:49:04 -0500
+Processing by MainController#index as HTML
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 3596ms (Views: 3464.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-01-05 15:53:48 -0500
+Processing by MainController#index as HTML
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 134ms (Views: 132.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-01-05 15:54:07 -0500
+Processing by MainController#index as HTML
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 542ms (Views: 416.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-01-05 15:54:22 -0500
+Processing by MainController#index as HTML
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 61ms (Views: 58.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-01-05 15:55:07 -0500
+Processing by MainController#index as HTML
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 47ms (Views: 45.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-01-05 15:56:29 -0500
+Processing by MainController#index as HTML
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 2999ms (Views: 2997.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-01-05 15:57:45 -0500
+Processing by MainController#index as HTML
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 2366ms (Views: 2363.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-01-05 15:57:52 -0500
+Processing by MainController#index as HTML
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 46ms (Views: 44.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-01-05 15:59:24 -0500
+Processing by MainController#index as HTML
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 2502ms (Views: 2500.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-01-05 15:59:42 -0500
+Processing by MainController#index as HTML
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 45ms (Views: 43.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-01-05 15:59:44 -0500
+Processing by MainController#index as HTML
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 46ms (Views: 44.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-01-05 15:59:59 -0500
+Processing by MainController#index as HTML
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 62ms (Views: 60.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-01-05 16:00:49 -0500
+Processing by MainController#index as HTML
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 2474ms (Views: 2472.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-01-05 16:01:18 -0500
+Processing by MainController#index as HTML
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 2307ms (Views: 2306.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-01-05 16:02:27 -0500
+Processing by MainController#index as HTML
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 2502ms (Views: 2485.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-01-05 16:02:56 -0500
+Processing by MainController#index as HTML
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 2242ms (Views: 2240.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-01-05 16:03:53 -0500
+Processing by MainController#index as HTML
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 2158ms (Views: 2157.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-01-05 16:06:13 -0500
+Processing by MainController#index as HTML
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (66.0ms)
+Completed 200 OK in 4364ms (Views: 4245.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-01-05 19:50:37 -0500
+Processing by MainController#index as HTML
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (39.8ms)
+Completed 200 OK in 5283ms (Views: 5219.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-01-05 19:50:57 -0500
+Processing by MainController#index as HTML
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 38ms (Views: 36.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-01-05 19:51:09 -0500
+Processing by MainController#index as HTML
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 2106ms (Views: 2105.1ms)
+
+

@@ -1,0 +1,37 @@
+// Place all the styles related to the main controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.main_box {
+  background-color: #0fc70f2e;
+
+  padding: 25px 100px 25px 100px;
+  margin-top: 70px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+}
+
+.main {
+  background-color: rgba(245, 245, 240, 0.19);
+}
+
+.custom-badge {
+  padding: 5px 7px 5px 7px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  margin-right: 5px;
+}
+
+.custom-badge-red {
+  background-color: #ffebee;
+}
+
+.custom-badge-yellow {
+  background-color: #fff9c4;
+}
+
+.custom-badge-blue {
+  background-color: #bbdefb;
+}
