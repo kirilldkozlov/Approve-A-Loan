@@ -27,7 +27,7 @@ class Currency
   end
 
   def usd_amount
-    @input_value * rate
+    @currency_iso == USD_ISO ? @input_value : @input_value * rate
   end
 
   def rate
