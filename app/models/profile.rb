@@ -1,13 +1,18 @@
-class Profile < ActiveModel::Model
+class Profile
+  include ActiveModel::Model
+  include ActiveModel::Validations
+  include ActiveModel::Validations::Callbacks
+
   attr_accessor :name, :age, :telephone, :relationship_and_sex, :property_status
   attr_accessor :housing_status, :foreign_worker, :job_status, :employment_length
   attr_accessor :loan_duration_months, :loan_purpose, :currency, :chequing_balance
   attr_accessor :loan_amount, :other_debtors_guarantors, :credit_history
   attr_accessor :other_loans, :value_of_savings
 
+  # p = Profile.new(name: "Kirill", age: 19, telephone: 6477709188, relationship_and_sex: 1, property_status: 1, housing_status: 1, foreign_worker: 1, job_status: 1, employment_length: 12, loan_duration_months: 2, loan_purpose: 1, currency: "CAD", chequing_balance: 500, loan_amount: 100, other_debtors_guarantors: 1, credit_history: 2, other_loans: 1, value_of_savings: 1000)
+
   validates :name, presence: true
   validates :currency, presence: true
-  validates_inclusion_of :currency, :in => APPROVED_CURRENCY
 
   validates :age, numericality: true, presence: true
   validates :telephone, numericality: true, presence: true
@@ -26,9 +31,11 @@ class Profile < ActiveModel::Model
   validates :other_loans, numericality: true, presence: true
   validates :value_of_savings, numericality: true, presence: true
 
-  after_validations :calculate_values
-
   APPROVED_CURRENCY = ["USD", "CAD", "EUR", "GBP", "JPY"]
+
+  validates_inclusion_of :currency, :in => APPROVED_CURRENCY
+
+  after_validation :calculate_values
 
   RELATIONSHIP_AND_SEX = [
     ["Male: Single", 3],
@@ -122,38 +129,38 @@ class Profile < ActiveModel::Model
     classify_value_of_savings
   end
 
-  def update_value(amount, iso = currency)
-    Currency.new(iso, amount).converted_value
+  def update_value(amount)
+    Currency.new(amount, currency).converted_value
   end
 
   def loan_amount_update
-    loan_amount =  update_value(amount)
+    self.loan_amount = update_value(@loan_amount)
   end
 
   def classify_chequing_balance
-    dm_val = update_value(chequing_balance)
+    dm_val = update_value(@chequing_balance)
 
-    chequing_balance = if val < 0
+    self.chequing_balance = if dm_val < 0
       1
-    elsif val >= 0 && val < 200
+    elsif dm_val >= 0 && dm_val < 200
       2
-    elsif val >= 200
+    elsif dm_val >= 200
       3
     end
   end
 
   def classify_value_of_savings
-    dm_val = update_value(value_of_savings)
+    dm_val = update_value(@value_of_savings)
 
-    value_of_savings = if val == 0
+    self.value_of_savings = if dm_val == 0
       5
-    elsif val > 0 && val < 100
+    elsif dm_val > 0 && dm_val < 100
       1
-    elsif val >= 100 && val < 500
+    elsif dm_val >= 100 && dm_val < 500
       2
-    elsif val >= 500 && val < 1000
+    elsif dm_val >= 500 && dm_val < 1000
       3
-    elsif val >= 1000
+    elsif dm_val >= 1000
       4
     end
   end
