@@ -9,18 +9,27 @@ class ProfilesController < ApplicationController
     @profile = Profile.new(profile_params)
 
     if @profile.valid?
-      data = Base64.urlsafe_encode64(@profile.testing_array.to_s) || ""
-      redirect_to action: "index", data: data
+      prediction = Analyzer.new.predict(@profile.testing_array)
+      verdict = prediction.first
+      confidence = prediction.second
+      telephone = profile_params[:telephone]
+      name = @profile.name
+
+      redirect_to action: "index",
+        verdict: encoder(verdict),
+        confidence: encoder(confidence),
+        telephone: encoder(telephone),
+        name: encoder(name)
     else
       render :new
     end
   end
 
   def index
-    data = params[:data] || ""
-    decoded_data =  Base64.urlsafe_decode64(data)
-
-    @data = decoded_data
+    @verdict = decoder(params[:verdict])
+    @confidence = decoder(params[:confidence])
+    @name = decoder(params[:name])
+    @telephone = decoder(params[:telephone])
   end
 
   private
@@ -46,5 +55,13 @@ class ProfilesController < ApplicationController
       :other_loans,
       :value_of_savings
     )
+  end
+
+  def encoder(val)
+    Base64.urlsafe_encode64(val.to_s || "")
+  end
+
+  def decoder(val)
+    Base64.urlsafe_decode64(val || "")
   end
 end
