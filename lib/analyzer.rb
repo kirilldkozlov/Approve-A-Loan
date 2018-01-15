@@ -1,6 +1,6 @@
 require 'rubygems'
 require 'decisiontree'
-require 'base64'
+require 'zlib'
 
 class Analyzer
   ATTRIBUTES = [
@@ -26,8 +26,6 @@ class Analyzer
     tree.predict(testing_array)
   end
 
-  private
-
   def sync
     data_modified = File.mtime("#{Rails.root}/lib/data/german.data")
     tree_modified = File.mtime("#{Rails.root}/lib/data/german_credit.decision_tree")
@@ -37,10 +35,13 @@ class Analyzer
     end
   end
 
+  private
+
   def tree
     sync
 
     marshalled_tree = File.read("#{Rails.root}/lib/data/german_credit.decision_tree")
+    marshalled_tree = Zlib::Inflate.inflate(marshalled_tree)
     dec_tree = Marshal.load(marshalled_tree)
   end
 
@@ -59,6 +60,7 @@ class Analyzer
 
   def save_tree(dec_tree)
     marshalled_tree = Marshal.dump(dec_tree)
+    marshalled_tree = Zlib::Deflate.deflate(marshalled_tree)
 
     File.open("#{Rails.root}/lib/data/german_credit.decision_tree", 'wb') do |f|
       f.write(marshalled_tree)
