@@ -59,8 +59,8 @@
     </div>
     <div class="col-md-4">
       <div class="form-group">
-        <%= f.label :employment_length, "Employment length in months" %><br>
-        <%= f.number_field :employment_length, class: "form-control", style: 'width: 100px' %>
+        <%= f.label :employment_length %><br>
+        <%= f.select :employment_length, Profile::EMPLOYMENT_LENGTH, {}, { class: "form-control" } %>
       </div>
     </div>
   </div>
