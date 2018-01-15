@@ -1,3 +1,5 @@
+require "base64"
+
 class ProfilesController < ApplicationController
   def new
     @profile = Profile.new
@@ -5,17 +7,20 @@ class ProfilesController < ApplicationController
 
   def create
     @profile = Profile.new(profile_params)
-    byebug
-    respond_to do |format|
-      if @profile.valid?
-          format.html { render :view, notice: 'Profile was successfully created.' }
-      else
-          format.html { render :new }
-      end
+
+    if @profile.valid?
+      data = Base64.urlsafe_encode64(@profile.testing_array.to_s) || ""
+      redirect_to action: "index", data: data
+    else
+      render :new
     end
   end
 
-  def view
+  def index
+    data = params[:data] || ""
+    decoded_data =  Base64.urlsafe_decode64(data)
+
+    @data = decoded_data
   end
 
   private
