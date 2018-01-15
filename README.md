@@ -1,24 +1,7 @@
-# README
+# Approve-A-Loan
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This project uses the 1993 German Credit Dataset to predict whether a credit applicant will be a good or bad customer. The application uses a decision tree classifier to determine an outcome. The conceptual usage for this program would be for a small business, such as a used car dealership, to quickly process an application and determine if they should approve a loan for a customer.
 
-Things you may want to cover:
+This application is inspired and based on the following project: https://onlinecourses.science.psu.edu/stat857/node/215
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+The classifier used achieves a ~72% accuracy which is close to the expected accuracy determined above. The accuracy would increase dramatically with a large dataset, currently it only processes 1000 records.
