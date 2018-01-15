@@ -35,6 +35,7 @@ class Profile
 
   validates_inclusion_of :currency, :in => APPROVED_CURRENCY
 
+  before_validation :convert_to_int
   after_validation :calculate_values
 
   RELATIONSHIP_AND_SEX = [
@@ -105,23 +106,27 @@ class Profile
     ["None", 3]
   ]
 
-  def telephone=(val)
-    if val.nil?
-      1
-    else
-      2
-    end
-  end
-
-  def foreign_worker=(val)
-    if val
-      1
-    else
-      2
-    end
-  end
-
   private
+
+  def convert_to_int
+    self.age = age.to_i
+    self.relationship_and_sex = relationship_and_sex.to_i
+    self.property_status = property_status.to_i
+    self.housing_status = housing_status.to_i
+    self.job_status = job_status.to_i
+    self.employment_length = employment_length.to_i
+    self.loan_duration_months = loan_duration_months.to_i
+    self.loan_purpose = loan_purpose.to_i
+    self.chequing_balance = chequing_balance.to_i
+    self.loan_amount = loan_amount.to_i
+    self.other_debtors_guarantors = other_debtors_guarantors.to_i
+    self.credit_history = credit_history.to_i
+    self.other_loans = other_loans.to_i
+    self.value_of_savings = value_of_savings.to_i
+
+    self.telephone = @telephone.nil? ? 1 : 2
+    self.foreign_worker = @foreign_worker ? 1 : 2
+  end
 
   def calculate_values
     loan_amount_update
@@ -165,30 +170,3 @@ class Profile
     end
   end
 end
-
-# # Personal info
-# - Name (string)
-# - Age 'Age in years' (int)
-# - 'Telephone' (int)
-# - 'Relationship status and sex' (enum)
-#
-# # Housing information
-# 'Property ownership status',
-# -  'Housing status',
-
-# # Employment information
-# - Foreign worker (boolean)
-# - 'Job status' (enum)
-# - 'Present employment length',
-
-# # Loan Details
-#   'Loan duration in months', x
-#   'Purpose for loan', x
-#   'Loan amount', x
-#   'Other debtors/guarantors',x
-
-# Financial Disclousre
-  # 'Existing chequing balance', x
-  # 'Value of savings',x
-  # 'Credit history status', X
-  # 'Other loans', X
