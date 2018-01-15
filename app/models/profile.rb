@@ -106,6 +106,27 @@ class Profile
     ["None", 3]
   ]
 
+  def testing_array
+    [
+      @chequing_balance,
+      @loan_duration_months,
+      @credit_history,
+      @loan_purpose,
+      @loan_amount,
+      @value_of_savings,
+      @employment_length,
+      @relationship_and_sex,
+      @other_debtors_guarantors,
+      @property_status,
+      @age,
+      @other_loans,
+      @housing_status,
+      @job_status,
+      @telephone,
+      @foreign_worker
+    ]
+  end
+
   private
 
   def convert_to_int
