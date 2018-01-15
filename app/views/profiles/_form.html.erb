@@ -1,0 +1,154 @@
+<div class="container">
+  <div class="row">
+    <h2 style="margin-top: 0px">Personal information</h2>
+    <br>
+    <div class="col-md-5">
+      <div class="form-group">
+        <%= f.label :name %><br>
+        <%= f.text_field :name, id: 'capitalizeText', class: "form-control" %>
+      </div>
+    </div>
+    <div class="col-md-2">
+      <div class="form-group">
+        <%= f.label :age %><br>
+        <%= f.select :age, (16..100), {}, { class: "form-control" } %>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="form-group">
+        <%= f.label :telephone %><br>
+        <%= f.text_field :telephone, id: 'phoneNumber', class: "form-control" %>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-4">
+      <div class="form-group">
+        <%= f.label :relationship_and_sex %><br>
+        <%= f.select :relationship_and_sex, Profile::RELATIONSHIP_AND_SEX, {}, { class: "form-control" } %>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="form-group">
+        <%= f.label :housing_status %><br>
+        <%= f.select :housing_status, Profile::HOUSING_STATUS, {}, { class: "form-control" } %>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="form-group">
+        <%= f.label :property_status %><br>
+        <%= f.select :property_status, Profile::PROPERTY_STATUS, {}, { class: "form-control" } %>
+      </div>
+    </div>
+  </div>
+    <hr style="border: 0.6px solid #fff" />​
+  <div class="row">
+    <h2 style="margin-top: 0px">Employment information</h2>
+    <br>
+    <div class="col-md-6">
+      <div class="form-group">
+        <%= f.label :job_status %><br>
+        <%= f.select :job_status, Profile::JOB_STATUS, {}, { class: "form-control" } %>
+      </div>
+    </div>
+    <div class="col-md-2">
+      <div class="form-group">
+        <%= f.label :foreign_worker %><br>
+        <%= f.check_box :foreign_worker, class: "form-check" %>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="form-group">
+        <%= f.label :employment_length, "Employment length in months" %><br>
+        <%= f.number_field :employment_length, class: "form-control", style: 'width: 100px' %>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <hr style="border: 0.6px solid #fff" />​
+  </div>
+  <div class="row">
+    <h2 style="margin-top: 0px">Loan information</h2>
+    <br>
+    <div class="col-md-4">
+      <div class="form-group">
+        <%= f.label :loan_amount %><br>
+        <%= f.number_field :loan_amount, class: "form-control" %>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="form-group">
+        <%= f.label :loan_purpose %><br>
+        <%= f.select :loan_purpose, Profile::LOAN_PURPOSE, {}, { class: "form-control" } %>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="form-group">
+        <%= f.label :currency %><br>
+        <%= f.select :currency, Profile::APPROVED_CURRENCY, {}, { class: "form-control" } %>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-3">
+      <div class="form-group">
+        <%= f.label :loan_duration_months %><br>
+        <%= f.number_field :loan_duration_months, class: "form-control", style: 'width: 100px' %>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="form-group">
+        <%= f.label :other_debtors_guarantors %><br>
+        <%= f.select :other_debtors_guarantors, Profile::OTHER_DEBTORS_GUARANTORS, {}, { class: "form-control" } %>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <hr style="border: 0.6px solid #fff" />​
+  </div>
+  <div class="row">
+    <h2 style="margin-top: 0px">Financial Disclosure</h2>
+    <br>
+    <div class="col-md-6">
+      <div class="form-group">
+        <%= f.label :credit_history %><br>
+        <%= f.select :credit_history, Profile::CREDIT_HISTORY, {}, { class: "form-control" } %>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="form-group">
+        <%= f.label :other_loans %><br>
+        <%= f.select :other_loans, Profile::OTHER_LOANS, {}, { class: "form-control" } %>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-5">
+      <div class="form-group">
+        <%= f.label :chequing_balance %><br>
+        <%= f.number_field :chequing_balance, class: "form-control" %>
+      </div>
+    </div>
+    <div class="col-md-5">
+      <div class="form-group">
+        <%= f.label :value_of_savings %><br>
+        <%= f.number_field :value_of_savings, class: "form-control" %>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <hr style="border: 0.6px solid #fff" />​
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="actions">
+        <%= f.submit "Analyze profile", class: "btn btn-primary" %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+   <%= render file: "#{Rails.root}/app/views/profiles/js/phone-format.erb.js" %>
+   <%= render file: "#{Rails.root}/app/views/profiles/js/capitalize.erb.js" %>
+</script>
