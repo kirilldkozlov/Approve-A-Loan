@@ -4,12 +4,16 @@
     </div>
     <div class="col-md-8">
       <div class="jumbotron main_box">
-        <h1 class="display-3">Approve-A-Loan</h1>
-        <h4>Please fill out this form to analyze a credit applicant</p>
-        <%= form_for(@profile) do |f| %>
-            <%= render 'errors', profile: @profile %>
-            <%= render 'form', f: f %>
-        <% end %>
+        <div class="custom-badge custom-badge-green">
+          <h1 class="display-3">Approve-A-Loan</h1>
+        </div>
+        <div class="form-margin-padding">
+          <h4>Please fill out this form to analyze a credit applicant</p>
+          <%= form_for(@profile) do |f| %>
+              <%= render 'errors', profile: @profile %>
+              <%= render 'form', f: f %>
+          <% end %>
+        </div>
       </div>
     </div>
     <div class="col-md-2">

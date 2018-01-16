@@ -4,15 +4,25 @@
     </div>
     <div class="col-md-8">
       <div class="jumbotron main_box">
-        <h1 class="display-3">Approve-A-Loan</h1>
-        <p>THE RESULTS GO HERE!</p>
-        <p><%= @verdict %></p>
-        <p><%= @confidence %></p>
-        <p><%= @name %></p>
-        <p><%= @telephone %></p>
+        <div class="custom-badge custom-badge-green">
+          <h1 class="display-3">Approve-A-Loan</h1>
+        </div>
+        <%= hidden_field_tag 'verdict', @verdict %>
+        <%= hidden_field_tag 'confidence', @confidence %>
+        <div class="custom-badge custom-badge-grey">
+          Analysis of a <b><%= @purpose %></b> loan for <b><%= @name %></b> <span class="badge badge-dark">tel: <%= @telephone %></span>
+        </div>
+        <br>
+        <center>
+          <div id="ring"></div>
+           </div>
+        </center>
       </div>
-    </div>
     <div class="col-md-2">
     </div>
   </div>
 </div>
+
+<script type="text/javascript">
+   <%= render file: "#{Rails.root}/app/views/profiles/js/ring-display.erb.js" %>
+</script>
