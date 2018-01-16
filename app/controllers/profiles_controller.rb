@@ -1,4 +1,4 @@
-require "base64"
+require 'base64'
 
 class ProfilesController < ApplicationController
   def new
@@ -17,12 +17,12 @@ class ProfilesController < ApplicationController
       purpose = @profile.loan_purpose
       name = @profile.name
 
-      redirect_to action: "index",
-        verdict: encoder(verdict),
-        confidence: encoder(confidence),
-        telephone: encoder(telephone),
-        name: encoder(name),
-        purpose: encoder(purpose)
+      redirect_to action: 'index',
+                  verdict: encoder(verdict),
+                  confidence: encoder(confidence),
+                  telephone: encoder(telephone),
+                  name: encoder(name),
+                  purpose: encoder(purpose)
     else
       render :new
     end
@@ -33,7 +33,9 @@ class ProfilesController < ApplicationController
     @confidence = decoder(params[:confidence])
     @name = decoder(params[:name])
     @telephone = decoder(params[:telephone])
-    @purpose = Profile::LOAN_PURPOSE[decoder(params[:purpose]).to_i].first.downcase
+    @purpose = Profile::LOAN_PURPOSE[decoder(params[:purpose]).to_i]
+               .first
+               .downcase
   end
 
   private
@@ -62,10 +64,10 @@ class ProfilesController < ApplicationController
   end
 
   def encoder(val)
-    Base64.urlsafe_encode64(val.to_s || "")
+    Base64.urlsafe_encode64(val.to_s || '')
   end
 
   def decoder(val)
-    Base64.urlsafe_decode64(val || "")
+    Base64.urlsafe_decode64(val || '')
   end
 end

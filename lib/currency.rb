@@ -3,9 +3,9 @@ require 'open-uri'
 class Currency
   attr_accessor :input_value, :currency_iso
 
-  SERVICE_HOST = "finance.google.com"
-  SERVICE_PATH = "/finance/converter"
-  USD_ISO = "USD"
+  SERVICE_HOST = 'finance.google.com'.freeze
+  SERVICE_PATH = '/finance/converter'.freeze
+  USD_ISO = 'USD'.freeze
 
   USD_TO_DM_1993 = 1.66
   CPI_2017 = 244.786
@@ -23,7 +23,7 @@ class Currency
   private
 
   def dm_amount
-    usd_amount * (CPI_1993/CPI_2017) * USD_TO_DM_1993
+    usd_amount * (CPI_1993 / CPI_2017) * USD_TO_DM_1993
   end
 
   def usd_amount
@@ -40,9 +40,9 @@ class Currency
 
   def fetch_rates(iso)
     uri = URI::HTTP.build(
-      :host  => SERVICE_HOST,
-      :path  => SERVICE_PATH,
-      :query => "a=1&from=#{iso}&to=#{USD_ISO}"
+      host: SERVICE_HOST,
+      path: SERVICE_PATH,
+      query: "a=1&from=#{iso}&to=#{USD_ISO}"
     )
 
     uri.read
@@ -50,10 +50,10 @@ class Currency
 
   def extract_rate(rates)
     case rates
-    when /<span class=bld>(\d+\.?\d*) [A-Z]{3}<\/span>/
-      $1.to_f
+    when %r{<span class=bld>(\d+\.?\d*) [A-Z]{3}<\/span>}
+      Regexp.last_match(1).to_f
     else
-      raise StandardError, "Rate Fetch Error"
+      raise StandardError, 'Rate Fetch Error'
     end
   end
 end

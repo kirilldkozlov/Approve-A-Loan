@@ -20,7 +20,7 @@ class Analyzer
     'Job status',
     'Telephone',
     'Foreign worker status'
-  ]
+  ].freeze
 
   def predict(testing_array)
     tree.predict(testing_array)
@@ -28,9 +28,12 @@ class Analyzer
 
   def sync
     data_modified = File.mtime("#{Rails.root}/lib/data/german.data")
-    tree_modified = File.mtime("#{Rails.root}/lib/data/german_credit.decision_tree")
+    tree_modified = File.mtime(
+      "#{Rails.root}/lib/data/german_credit.decision_tree"
+    )
 
-    if data_modified > tree_modified || File.zero?("#{Rails.root}/lib/data/german_credit.decision_tree")
+    if data_modified > tree_modified ||
+       File.zero?("#{Rails.root}/lib/data/german_credit.decision_tree")
       construct_tree
     end
   end
@@ -38,11 +41,12 @@ class Analyzer
   private
 
   def tree
-    sync
+    marshalled_tree = File.read(
+      "#{Rails.root}/lib/data/german_credit.decision_tree"
+    )
 
-    marshalled_tree = File.read("#{Rails.root}/lib/data/german_credit.decision_tree")
     marshalled_tree = Zlib::Inflate.inflate(marshalled_tree)
-    dec_tree = Marshal.load(marshalled_tree)
+    Marshal.load(marshalled_tree)
   end
 
   def construct_tree
@@ -68,15 +72,13 @@ class Analyzer
   end
 
   def formatted_data
-    data = []
     data = File.readlines("#{Rails.root}/lib/data/german.data").map do |line|
       line.split.map do |item|
-
-        if item == 'A410'
-          new_value = 10
-        else
-          new_value = (item[0] == 'A') ? item[-1, 1] : item
-        end
+        new_value = if item == 'A410'
+                      10
+                    else
+                      item[0] == 'A' ? item[-1, 1] : item
+                    end
 
         new_value.to_f
       end
