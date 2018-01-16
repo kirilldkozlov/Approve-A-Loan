@@ -2,6 +2,7 @@ require "base64"
 
 class ProfilesController < ApplicationController
   def new
+    ConstructTreeWorker.perform_async
     @profile = Profile.new
   end
 
