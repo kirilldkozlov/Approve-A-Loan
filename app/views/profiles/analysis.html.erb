@@ -1,15 +1,15 @@
-<div class="container-fluid main">
+<div class="container-fluid">
   <div class="row">
     <div class="col-md-2">
     </div>
     <div class="col-md-8">
       <div class="jumbotron main_box">
-        <div class="custom-badge custom-badge-green">
+        <div class="custom-badge custom-badge-h1">
           <h1 class="display-3">Approve-A-Loan</h1>
         </div>
         <%= hidden_field_tag 'verdict', @log.verdict %>
         <%= hidden_field_tag 'confidence', @confidence %>
-        <div class="custom-badge custom-badge-grey">
+        <div class="custom-badge custom-badge-dark">
           Analysis of a <b><%= @log.loan_purpose.downcase %></b> loan for <b><%= @log.name %></b>
         </div>
         <br>

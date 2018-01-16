@@ -37,6 +37,7 @@ class ProfilesController < ApplicationController
 
   def print
     @log = Log.find_by_id(params[:id].to_i)
+    render layout: false
   end
 
   def index
