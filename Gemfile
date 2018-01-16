@@ -7,6 +7,7 @@ end
 
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass', '~> 3.2.0'
+gem "font-awesome-rails"
 gem 'coffee-rails', '~> 4.2'
 gem 'decisiontree'
 gem 'jbuilder', '~> 2.5'

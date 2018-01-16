@@ -1,4 +1,5 @@
 require 'base64'
+require 'sidekiq/api'
 
 class ProfilesController < ApplicationController
   def new
@@ -10,32 +11,38 @@ class ProfilesController < ApplicationController
     @profile = Profile.new(profile_params)
 
     if @profile.valid?
-      prediction = Analyzer.new.predict(@profile.testing_array)
-      verdict = prediction.first
-      confidence = prediction.second
-      telephone = profile_params[:telephone]
-      purpose = @profile.loan_purpose
-      name = @profile.name
+      wait_for_sidekiq
+      verdict, confidence = prediction = prediction(@profile)
+      loan_amount = profile_params[:loan_amount]
+      log_id = save_log(@profile, loan_amount, verdict)
 
-      redirect_to action: 'index',
-                  verdict: encoder(verdict),
-                  confidence: encoder(confidence),
-                  telephone: encoder(telephone),
-                  name: encoder(name),
-                  purpose: encoder(purpose)
+      redirect_to action: 'analysis',
+                  log_id: encoder(log_id),
+                  confidence: encoder(confidence)
     else
       render :new
     end
   end
 
-  def index
-    @verdict = decoder(params[:verdict])
+  def analysis
+    log_id = decoder(params[:log_id])
     @confidence = decoder(params[:confidence])
-    @name = decoder(params[:name])
-    @telephone = decoder(params[:telephone])
-    @purpose = Profile::LOAN_PURPOSE[decoder(params[:purpose]).to_i]
-               .first
-               .downcase
+    @log = Log.find_by_id(log_id)
+  end
+
+  def delete
+    Log.find_by_id(params[:id].to_i)&.destroy
+    redirect_to profiles_path
+  end
+
+  def print
+    @log = Log.find_by_id(params[:id].to_i)
+  end
+
+  def index
+    Log.find_by_id(params[:id].to_i)&.update_attributes!(status: 1)
+    Log.where(status: 0).destroy_all
+    @logs = Log.where(status: 1)
   end
 
   private
@@ -63,11 +70,37 @@ class ProfilesController < ApplicationController
     )
   end
 
+  def prediction(profile)
+    if profile.max_condition?
+      [2, 1]
+    else
+      Analyzer.new.predict(profile.testing_array)
+    end
+  end
+
+  def save_log(profile, loan_amount, verdict)
+    log = Log.create!(
+      name: profile.name,
+      phone: profile.telephone,
+      currency: profile.currency,
+      loan_duration_months: profile.loan_duration_months.to_i,
+      loan_purpose: Profile::LOAN_PURPOSE.select{ |key, val| val == profile.loan_purpose.to_i }.first.first,
+      loan_amount: loan_amount,
+      verdict: verdict.to_i
+    )
+
+    log.id
+  end
+
   def encoder(val)
     Base64.urlsafe_encode64(val.to_s || '')
   end
 
   def decoder(val)
     Base64.urlsafe_decode64(val || '')
+  end
+
+  def wait_for_sidekiq
+    sleep(1) until Sidekiq::Workers.new.size == 0 && Sidekiq::Queue.new.size == 0
   end
 end

@@ -7,22 +7,56 @@
         <div class="custom-badge custom-badge-green">
           <h1 class="display-3">Approve-A-Loan</h1>
         </div>
-        <%= hidden_field_tag 'verdict', @verdict %>
-        <%= hidden_field_tag 'confidence', @confidence %>
-        <div class="custom-badge custom-badge-grey">
-          Analysis of a <b><%= @purpose %></b> loan for <b><%= @name %></b> <span class="badge badge-dark">tel: <%= @telephone %></span>
-        </div>
-        <br>
-        <center>
-          <div id="ring"></div>
-           </div>
-        </center>
+        <table class="table table-striped table-format" style="">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Applicant's name</th>
+                <th>Phone</th>
+                <th>Loan purpose</th>
+                <th>Amount</th>
+                <th>Duration in months</th>
+                <th>Verdict</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% @logs.each do |log| %>
+                <tr>
+                  <td><%= log.id %></td>
+                  <td><%= log.name %></td>
+                  <td><%= log.phone %></td>
+                  <td><%= log.loan_purpose %></td>
+                  <td><%= number_to_currency(log.loan_amount, unit: "", precision: 2) %> <%= log.currency %></td>
+                  <td><%= log.loan_duration_months %></td>
+                  <td>
+                    <span class="badge verdict-<%= log.verdict == "approved" ? "success" : "danger" %>">
+                      <%= log.verdict.capitalize %>
+                    </span>
+                  </td>
+                  <td>
+                    <%= link_to print_profiles_path(id: log.id), method: :get, target: :_blank do %>
+                      <%= fa_icon 'print', class: "fa-lg" %>
+                    <% end %>
+                    <%= link_to delete_profiles_path(id: log.id), method: :post, data: { confirm: "Are you sure?" } do %>
+                      <%= fa_icon 'trash', class: "fa-lg", style: "color: #c0392b;" %>
+                    <% end %>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+          <center>
+            <div class="custom-badge custom-badge-white">
+              <b>Total money loaned out:</b> <%= StatsHelper.sum_of_loans %>
+            </div>
+          </center>
+          <div class="row" style="padding-left: 10px;">
+            <div class="col-sm-1">
+              <%= button_to "New", new_profile_path, method: :get, class: "btn btn-success", style: "width: 5em;" %>
+            </div>
+          </div>
       </div>
     <div class="col-md-2">
     </div>
   </div>
 </div>
-
-<script type="text/javascript">
-   <%= render file: "#{Rails.root}/app/views/profiles/js/ring-display.erb.js" %>
-</script>

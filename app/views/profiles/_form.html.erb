@@ -5,7 +5,7 @@
     <div class="col-md-5">
       <div class="form-group">
         <%= f.label :name %><br>
-        <%= f.text_field :name, id: 'capitalizeText', class: "form-control" %>
+        <%= f.text_field :name, id: 'capitalizeText', class: "form-control", required: true %>
       </div>
     </div>
     <div class="col-md-2">
@@ -45,13 +45,13 @@
   <div class="row">
     <h2 style="margin-top: 0px">Employment information</h2>
     <br>
-    <div class="col-md-6">
+    <div class="col-md-5">
       <div class="form-group">
         <%= f.label :job_status %><br>
         <%= f.select :job_status, Profile::JOB_STATUS, {}, { class: "form-control" } %>
       </div>
     </div>
-    <div class="col-md-2">
+    <div class="col-md-3">
       <div class="form-group">
         <%= f.label :foreign_worker %><br>
         <%= f.check_box :foreign_worker, class: "form-check" %>
@@ -73,7 +73,7 @@
     <div class="col-md-4">
       <div class="form-group">
         <%= f.label :loan_amount %><br>
-        <%= f.number_field :loan_amount, class: "form-control" %>
+        <%= f.number_field :loan_amount, class: "form-control", min: 0, required: true %>
       </div>
     </div>
     <div class="col-md-4">
@@ -93,12 +93,12 @@
     <div class="col-md-3">
       <div class="form-group">
         <%= f.label :loan_duration_months %><br>
-        <%= f.number_field :loan_duration_months, class: "form-control", style: 'width: 100px' %>
+        <%= f.number_field :loan_duration_months, class: "form-control", style: 'width: 100px', required: true %>
       </div>
     </div>
     <div class="col-md-4">
       <div class="form-group">
-        <%= f.label :other_debtors_guarantors %><br>
+        <%= f.label "Other debtors or guarantors" %><br>
         <%= f.select :other_debtors_guarantors, Profile::OTHER_DEBTORS_GUARANTORS, {}, { class: "form-control" } %>
       </div>
     </div>
@@ -126,13 +126,13 @@
     <div class="col-md-5">
       <div class="form-group">
         <%= f.label :chequing_balance %><br>
-        <%= f.number_field :chequing_balance, class: "form-control" %>
+        <%= f.number_field :chequing_balance, class: "form-control", min: 0, required: true %>
       </div>
     </div>
     <div class="col-md-5">
       <div class="form-group">
         <%= f.label :value_of_savings %><br>
-        <%= f.number_field :value_of_savings, class: "form-control" %>
+        <%= f.number_field :value_of_savings, class: "form-control", min: 0, required: true %>
       </div>
     </div>
   </div>
@@ -140,7 +140,7 @@
     <hr style="border: 0.6px solid #fff" />​
   </div>
   <div class="row">
-    <div class="col-md-12">
+    <div class="col-sm-12">
       <div class="actions">
         <%= f.submit "Analyze profile", class: "btn btn-primary" %>
       </div>

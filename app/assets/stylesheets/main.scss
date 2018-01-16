@@ -6,7 +6,7 @@
   background-color: #0fc70f2e;
 
   padding: 25px 100px 25px 100px;
-  margin-top: 70px;
+  margin: 55px;
   -moz-border-radius: 10px;
   -webkit-border-radius: 10px;
   border-radius: 10px;
@@ -14,6 +14,14 @@
 
 .main {
   background-color: rgba(245, 245, 240, 0.19);
+}
+
+.table-format {
+  margin: 10px;
+  background-color: #fff;
+  -moz-border-radius: 7px;
+  -webkit-border-radius: 7px;
+  border-radius: 7px;
 }
 
 #ring {
@@ -43,10 +51,11 @@
 
 .custom-badge {
   padding: 12px 19px 12px 19px;
-  -moz-border-radius: 5px;
-  -webkit-border-radius: 5px;
-  border-radius: 10px;
+  -moz-border-radius: 7px;
+  -webkit-border-radius: 7px;
+  border-radius: 7px;
   margin: 10px;
+  width: 100%;
 }
 
 .custom-badge-green {
@@ -57,4 +66,22 @@
   background-color: #f2f2f2;
   font-size: 16px;
   font-weight: 450;
+}
+
+.custom-badge-white {
+  background-color: #fff;
+  font-size: 16px;
+  font-weight: 450;
+}
+
+.custom-badge-error {
+  background-color: #FFC197;
+}
+
+.verdict-success {
+  background-color: #27ae60;
+}
+
+.verdict-danger {
+  background-color: #c0392b;
 }

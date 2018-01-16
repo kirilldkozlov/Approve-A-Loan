@@ -3,9 +3,8 @@ var verdict = document.getElementById('verdict').value;
 var percentage = document.getElementById('confidence').value;
 
 // Set condition variables
-var type_condition = (verdict == "1.0");
+var type_condition = (verdict == "approved");
 var text = type_condition ? "Approved" : "Denied";
-var class_name = type_condition ? "approved" : "denied";
 var color_ring = type_condition ? '#144900' : '#b02f26';
 
 // Set the circle
@@ -17,7 +16,7 @@ var bar = new ProgressBar.Circle(ring, {
   trailColor: '#d9d9d9',
   text: {
       value: text,
-      className: 'progressbar__label ${class_name}',
+      className: 'progressbar__label ${verdict}',
       autoStyle: false
   },
   trailWidth: 0.75,

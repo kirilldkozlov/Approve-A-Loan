@@ -14,7 +14,7 @@ class Profile
   validates :currency, presence: true
 
   validates :age, numericality: true, presence: true
-  validates :telephone, numericality: true, presence: true
+  validates :telephone, presence: true
   validates :relationship_and_sex, numericality: true, presence: true
   validates :property_status, numericality: true, presence: true
   validates :housing_status, numericality: true, presence: true
@@ -29,6 +29,8 @@ class Profile
   validates :credit_history, numericality: true, presence: true
   validates :other_loans, numericality: true, presence: true
   validates :value_of_savings, numericality: true, presence: true
+
+  validates_format_of :telephone, with: %r{(\([0-9]{3}\)\s[0-9]{3}\s[-]\s[0-9]{4})+\z}
 
   APPROVED_CURRENCY = %w[USD CAD EUR GBP JPY].freeze
 
@@ -121,14 +123,20 @@ class Profile
       @other_loans,
       @housing_status,
       @job_status,
-      @telephone,
       @foreign_worker
     ]
+  end
+
+  def max_condition?
+    @loan_amount > 30000 ||
+    @loan_duration_months > 60
   end
 
   private
 
   def convert_to_int
+    return false unless self.errors.empty?
+    
     self.age = age.to_i
     self.relationship_and_sex = relationship_and_sex.to_i
     self.property_status = property_status.to_i
@@ -144,7 +152,6 @@ class Profile
     self.other_loans = other_loans.to_i
     self.value_of_savings = value_of_savings.to_i
 
-    self.telephone = @telephone.nil? ? 1 : 2
     self.foreign_worker = @foreign_worker ? 1 : 2
   end
 

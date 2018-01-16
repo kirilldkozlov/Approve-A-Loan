@@ -1,0 +1,61 @@
+<div style="padding: 20px">
+<h1>Credit Approval Report</h1>
+
+  <table border="1" width="500px">
+    <tr>
+      <td><b>&nbsp;Application ID</b></td>
+      <td>
+        &nbsp;<%= @log.id %>
+      </td>
+      <td><b>&nbsp;Date</b></td>
+      <td>
+        &nbsp;<%= @log.created_at.strftime("%m/%d/%Y") %>
+      </td>
+    </tr>
+    <tr>
+      <td><b>&nbsp;Applications name</b></td>
+      <td>
+        &nbsp;<%= @log.name %>
+      </td>
+      <td><b>&nbsp;Telephone</b></td>
+      <td>
+        &nbsp;<%= @log.phone %>
+      </td>
+    </tr>
+  </table>
+
+<h2>Loan information</h2>
+<b>Loan purpose:</b> <%= @log.loan_purpose %><br>
+<b>Amount:</b> <%= number_to_currency(@log.loan_amount, unit: "", precision: 2) %> <%= @log.currency %><br>
+<b>Duration (months):</b> <%= @log.loan_duration_months %><br>
+
+<h2>Analysis results</h2>
+<b>Loan status:</b> <%= @log.verdict.capitalize %><br>
+
+<h2>Acknowledgment of analysis</h2>
+<table border="1" width="500px">
+  <tr>
+    <td><b>&nbsp;Signature&nbsp;</b></td>
+    <td>
+      <input type="text" name="name" size="29">
+    </td>
+    <td><b>&nbsp;Date&nbsp;</b></td>
+    <td>
+      <input type="text" name="name" size="17">
+    </td>
+  </tr>
+</table>
+<br>
+<i>This analysis was performed by Approve-A-Loan™.</i>
+<br><br>
+<button onclick="myFunction()" id="printpagebutton">Print this page</button>
+</div>
+
+<script>
+function myFunction() {
+    var printButton = document.getElementById("printpagebutton");
+    printButton.style.visibility = 'hidden';
+    window.print();
+    printButton.style.visibility = 'visible';
+}
+</script>

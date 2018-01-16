@@ -18,7 +18,6 @@ class Analyzer
     'Other loans',
     'Housing status',
     'Job status',
-    'Telephone',
     'Foreign worker status'
   ].freeze
 
@@ -38,6 +37,29 @@ class Analyzer
     end
   end
 
+  def test
+    data = formatted_data
+    training_range = ((data.length * 80) / 100.to_f).ceil
+    test_range = data.length - training_range
+    training = data.first(training_range)
+    test = data.last(test_range)
+
+    dec_tree = DecisionTree::Bagging.new(ATTRIBUTES, training, 2, :continuous)
+    dec_tree.train
+
+    correct = 0
+
+    test.each do |t|
+      predict = dec_tree.predict(t)
+
+      if predict.first == t.last
+        correct+=1
+      end
+    end
+
+    (correct.to_f / test.length.to_f) > 0.7
+  end
+
   private
 
   def tree
@@ -51,12 +73,8 @@ class Analyzer
 
   def construct_tree
     data = formatted_data
-    training_range = ((data.length * 80) / 100.to_f).ceil
-    test_range = data.length - training_range
-    training = data.first(training_range)
-    test = data.last(test_range)
 
-    dec_tree = DecisionTree::Bagging.new(ATTRIBUTES, training, 2, :continuous)
+    dec_tree = DecisionTree::Bagging.new(ATTRIBUTES, data, 2, :continuous)
     dec_tree.train
 
     save_tree(dec_tree)
