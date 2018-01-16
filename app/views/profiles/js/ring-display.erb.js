@@ -13,7 +13,7 @@ var bar = new ProgressBar.Circle(ring, {
   easing: 'easeOutBounce',
   duration: 3250,
   color: color_ring,
-  trailColor: '#d9d9d9',
+  trailColor: '#99ACAD',
   text: {
       value: text,
       className: 'progressbar__label ${verdict}',

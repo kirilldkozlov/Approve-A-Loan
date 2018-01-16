@@ -1,10 +1,10 @@
-<div class="container-fluid main">
+<div class="container-fluid">
   <div class="row">
     <div class="col-md-2">
     </div>
     <div class="col-md-8">
       <div class="jumbotron main_box">
-        <div class="custom-badge custom-badge-green">
+        <div class="custom-badge custom-badge-h1">
           <h1 class="display-3">Approve-A-Loan</h1>
         </div>
         <table class="table table-striped table-format" style="">
@@ -36,7 +36,7 @@
                   </td>
                   <td>
                     <%= link_to print_profiles_path(id: log.id), method: :get, target: :_blank do %>
-                      <%= fa_icon 'print', class: "fa-lg" %>
+                      <%= fa_icon 'print', class: "fa-lg", style: "color: #07575B;"%>
                     <% end %>
                     <%= link_to delete_profiles_path(id: log.id), method: :post, data: { confirm: "Are you sure?" } do %>
                       <%= fa_icon 'trash', class: "fa-lg", style: "color: #c0392b;" %>
