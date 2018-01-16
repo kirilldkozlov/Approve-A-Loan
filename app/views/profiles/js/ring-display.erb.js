@@ -11,7 +11,7 @@ var color_ring = type_condition ? '#144900' : '#b02f26';
 // Set the circle
 var bar = new ProgressBar.Circle(ring, {
   strokeWidth: 6,
-  easing: 'bounce',
+  easing: 'easeOutBounce',
   duration: 3250,
   color: color_ring,
   trailColor: '#d9d9d9',
