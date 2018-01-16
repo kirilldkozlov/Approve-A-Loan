@@ -57,7 +57,6 @@ class Analyzer
       end
     end
 
-    puts correct
     (correct.to_f / test.length.to_f) > 0.7
   end
 
