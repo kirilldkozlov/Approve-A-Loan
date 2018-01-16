@@ -13,7 +13,7 @@ class ProfilesController < ApplicationController
       verdict = prediction.first
       confidence = prediction.second
       telephone = profile_params[:telephone]
-      purpose = profile_params[:loan_purpose]
+      purpose = @profile.loan_purpose
       name = @profile.name
 
       redirect_to action: "index",
