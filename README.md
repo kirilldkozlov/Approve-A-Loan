@@ -9,6 +9,7 @@ The classifier used achieves a ~72% accuracy which is close to the expected accu
 ## Running the application
 
 1. Start Redis
+- On local machine, first `cd ~/redis-stable/src` then run `./redis-server`
 2. Run `bundle exec sidekiq`
 3. Run `rails server`
 4. Go to `http://localhost:3000`
