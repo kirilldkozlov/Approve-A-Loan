@@ -83,7 +83,7 @@ class Profile
     ["Tuition", 6],
     ["Professional training", 8],
     ["Business loan", 9],
-    ["Other", 10]
+    ["General", 10]
   ]
 
   OTHER_DEBTORS_GUARANTORS = [
