@@ -5,3 +5,10 @@ This project uses the 1993 German Credit Dataset to predict whether a credit app
 This application is inspired and based on the following project: https://onlinecourses.science.psu.edu/stat857/node/215
 
 The classifier used achieves a ~72% accuracy which is close to the expected accuracy determined above. The accuracy would increase dramatically with a large dataset, currently it only processes 1000 records.
+
+## Running the application
+
+1. Start Redis
+2. Run `bundle exec sidekiq`
+3. Run `rails server`
+4. Go to `http://localhost:3000`
