@@ -13,13 +13,15 @@ class ProfilesController < ApplicationController
       verdict = prediction.first
       confidence = prediction.second
       telephone = profile_params[:telephone]
+      purpose = profile_params[:loan_purpose]
       name = @profile.name
 
       redirect_to action: "index",
         verdict: encoder(verdict),
         confidence: encoder(confidence),
         telephone: encoder(telephone),
-        name: encoder(name)
+        name: encoder(name),
+        purpose: encoder(purpose)
     else
       render :new
     end
@@ -30,6 +32,7 @@ class ProfilesController < ApplicationController
     @confidence = decoder(params[:confidence])
     @name = decoder(params[:name])
     @telephone = decoder(params[:telephone])
+    @purpose = Profile::LOAN_PURPOSE[decoder(params[:purpose]).to_i].first.downcase
   end
 
   private
