@@ -13,3 +13,6 @@ The classifier used achieves a ~77% accuracy which is close to the expected accu
 2. Run `bundle exec sidekiq`
 3. Run `rails server`
 4. Go to `http://localhost:3000`
+
+## Application facts
+- Test coverage `> 90%`
