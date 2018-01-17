@@ -4,9 +4,18 @@
     </div>
     <div class="col-md-8">
       <div class="jumbotron main_box">
-        <div class="custom-badge custom-badge-h1">
-          <h1 class="display-3">Approve-A-Loan</h1>
-        </div>
+        <%= link_to profiles_path do %>
+          <div class="custom-badge custom-badge-h1">
+            <h1 class="display-3">Approve-A-Loan</h1>
+          </div>
+        <% end %>
+
+        <% if flash[:error] %>
+          <div class="custom-badge custom-badge-error">
+            <%= flash[:error] %>
+          </div>
+        <% end %>
+
         <table class="table table-striped table-format" style="">
             <thead>
               <tr>

@@ -1,19 +1,19 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  name: MyString
-  phone: MyString
-  currency: MyString
-  loan_duration_months: 
-  loan_purpose: MyString
-  loan_amount: 1.5
-  verdict: 
+valid:
+  name: Kirill Kozlov
+  phone: (123) 222 - 2222
+  currency: CAD
+  loan_duration_months: 55
+  loan_purpose: New car
+  loan_amount: 1000
+  verdict: 1
 
-two:
-  name: MyString
-  phone: MyString
-  currency: MyString
-  loan_duration_months: 
-  loan_purpose: MyString
-  loan_amount: 1.5
-  verdict: 
+valid_usd:
+  name: Kirill Kozlov
+  phone: (123) 222 - 2222
+  currency: USD
+  loan_duration_months: 55
+  loan_purpose: New car
+  loan_amount: 1000
+  verdict: 1

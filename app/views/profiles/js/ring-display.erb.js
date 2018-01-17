@@ -16,7 +16,7 @@ var bar = new ProgressBar.Circle(ring, {
   trailColor: '#99ACAD',
   text: {
       value: text,
-      className: 'progressbar__label ${verdict}',
+      className: 'progressbar__label',
       autoStyle: false
   },
   trailWidth: 0.75,
