@@ -6,7 +6,11 @@ class ConstructTreeWorkerTest < ActiveSupport::TestCase
     Sidekiq::Testing.fake!
   end
 
-  test "ConstructTreeWorker is queued properly" do
+  teardown do
+    Sidekiq::Worker.drain_all
+  end
+
+  test 'ConstructTreeWorker is queued properly' do
     assert_equal 0, ConstructTreeWorker.jobs.size
     ConstructTreeWorker.perform_async
     assert_equal 1, ConstructTreeWorker.jobs.size
