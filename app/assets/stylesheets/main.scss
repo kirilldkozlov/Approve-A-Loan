@@ -1,7 +1,3 @@
-// Place all the styles related to the main controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
-
 $page-background: #ECF8F8;
 $box-background: #C4DFE6;
 
@@ -16,11 +12,24 @@ $box-background: #C4DFE6;
   color: #002026;
 }
 
+a, a:link, a:visited, a:focus, a:hover, a:active{
+  text-decoration:none;
+}
+
+a:link {
+  color: #002026;;
+}
+
+a:visited, a:hover, a:active,  {
+    color: lighten(#002026, 20%);
+}
+
 .main_box {
   background-color: $box-background;
 
   padding: 25px 100px 25px 100px;
-  margin: 55px;
+  margin-top: 55px;
+  margin-bottom: 30px;
   -moz-border-radius: 10px;
   -webkit-border-radius: 10px;
   border-radius: 10px;
@@ -37,14 +46,6 @@ $box-background: #C4DFE6;
 .progressbar__label {
   font-size: 38px;
   font-weight: 900;
-}
-
-.progressbar__label .approved {
-  color: #144900;
-}
-
-.progressbar__label .denied {
-  color: #b02f26;
 }
 
 .form-margin-padding {
