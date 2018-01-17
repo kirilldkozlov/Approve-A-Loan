@@ -3,3 +3,4 @@
 /log/development.log
 /log/test.log
 coverage
+db/test.sqlite3
