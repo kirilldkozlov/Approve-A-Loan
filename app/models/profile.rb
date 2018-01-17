@@ -30,7 +30,7 @@ class Profile
   validates :other_loans, numericality: true, presence: true
   validates :value_of_savings, numericality: true, presence: true
 
-  validates_format_of :telephone, with: %r{(\([0-9]{3}\)\s[0-9]{3}\s[-]\s[0-9]{4})+\z}
+  validates_format_of :telephone, with: /(\([0-9]{3}\)\s[0-9]{3}\s[-]\s[0-9]{4})+\z/
 
   APPROVED_CURRENCY = %w[USD CAD EUR GBP JPY].freeze
 
@@ -128,14 +128,14 @@ class Profile
   end
 
   def max_condition?
-    @loan_amount > 30000 ||
-    @loan_duration_months > 60
+    @loan_amount > 30_000 ||
+      @loan_duration_months > 60
   end
 
   private
 
   def convert_to_int
-    return false unless self.errors.empty?
+    return false unless errors.empty?
 
     self.age = age.to_i
     self.relationship_and_sex = relationship_and_sex.to_i

@@ -10,17 +10,17 @@ class ProfilesController < ApplicationController
   def create
     @profile = Profile.new(profile_params)
 
-    if @profile.valid?
-      wait_for_sidekiq
-      verdict, confidence = prediction = prediction(@profile)
-      loan_amount = profile_params[:loan_amount]
-      log_id = save_log(@profile, loan_amount, verdict)
-
-      redirect_to action: 'analysis',
-                  log_id: encoder(log_id),
-                  confidence: encoder(confidence)
-    else
-      render :new
+    begin
+      if @profile.valid?
+        wait_for_sidekiq
+        create_analysis
+      else
+        render :new
+      end
+    rescue StandardError
+      redirect_to profiles_path, flash: {
+        error: "Connection error. Please try again later."
+      }
     end
   end
 
@@ -40,8 +40,12 @@ class ProfilesController < ApplicationController
     render layout: false
   end
 
-  def index
+  def save
     Log.find_by_id(params[:id].to_i)&.update_attributes!(status: 1)
+    redirect_to profiles_path
+  end
+
+  def index
     Log.where(status: 0).destroy_all
     @logs = Log.where(status: 1)
   end
@@ -74,9 +78,21 @@ class ProfilesController < ApplicationController
   def prediction(profile)
     if profile.max_condition?
       [2, 1]
+    elsif Rails.env.test?
+      [1, 1]
     else
       Analyzer.new.predict(profile.testing_array)
     end
+  end
+
+  def create_analysis
+    verdict, confidence = prediction = prediction(@profile)
+    loan_amount = profile_params[:loan_amount]
+    log_id = save_log(@profile, loan_amount, verdict)
+
+    redirect_to action: 'analysis',
+                log_id: encoder(log_id),
+                confidence: encoder(confidence)
   end
 
   def save_log(profile, loan_amount, verdict)
