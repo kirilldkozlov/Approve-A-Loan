@@ -48,9 +48,9 @@ class Profile
   ].freeze
 
   PROPERTY_STATUS = [
+    ['No property or unknown', 4],
     ['Own real estate', 1],
-    ['Car ownership but no real estate', 3],
-    ['No property or unknown', 4]
+    ['Car ownership but no real estate', 3]
   ].freeze
 
   HOUSING_STATUS = [
@@ -102,9 +102,9 @@ class Profile
   ].freeze
 
   OTHER_LOANS = [
+    ['None', 3],
     ['Bank loans', 1],
-    ['Loans from a company/store', 2],
-    ['None', 3]
+    ['Loans from a company/store', 2]
   ].freeze
 
   def testing_array
@@ -123,7 +123,7 @@ class Profile
       @other_loans,
       @housing_status,
       @job_status,
-      @foreign_worker
+      @foreign_worker == 0 ? 1 : 2
     ]
   end
 
@@ -136,7 +136,7 @@ class Profile
 
   def convert_to_int
     return false unless self.errors.empty?
-    
+
     self.age = age.to_i
     self.relationship_and_sex = relationship_and_sex.to_i
     self.property_status = property_status.to_i
@@ -151,8 +151,7 @@ class Profile
     self.credit_history = credit_history.to_i
     self.other_loans = other_loans.to_i
     self.value_of_savings = value_of_savings.to_i
-
-    self.foreign_worker = @foreign_worker ? 1 : 2
+    self.foreign_worker = foreign_worker.to_i
   end
 
   def calculate_values

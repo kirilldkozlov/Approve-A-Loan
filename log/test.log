@@ -1,0 +1,2542 @@
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "logs"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (132.6ms)[0m  [1m[35mCREATE TABLE "logs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "phone" varchar, "currency" varchar, "loan_duration_months" integer, "loan_purpose" varchar, "loan_amount" float, "verdict" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "status" integer DEFAULT 0)[0m
+  [1m[35m (133.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (89.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20180116030238)[0m
+  [1m[35m (99.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20180116022941);
+
+[0m
+  [1m[35m (115.6ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "test"], ["created_at", "2018-01-16 21:22:40.232304"], ["updated_at", "2018-01-16 21:22:40.232304"]]
+  [1m[35m (87.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.2ms)[0m  [1m[31mDELETE FROM "logs"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "logs" ("name", "phone", "currency", "loan_duration_months", "loan_purpose", "loan_amount", "verdict", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', NULL, 'MyString', 1.5, NULL, '2018-01-16 21:32:33.535490', '2018-01-16 21:32:33.535490', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "logs" ("name", "phone", "currency", "loan_duration_months", "loan_purpose", "loan_amount", "verdict", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', NULL, 'MyString', 1.5, NULL, '2018-01-16 21:32:33.535490', '2018-01-16 21:32:33.535490', 298486374)[0m
+  [1m[35m (219.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------------------------------
+ConstructTreeWorkerTest: test_#perform_returns_true_from_Analyzer.new.sync
+--------------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.2ms)[0m  [1m[31mDELETE FROM "logs"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "logs" ("name", "phone", "currency", "loan_duration_months", "loan_purpose", "loan_amount", "verdict", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', NULL, 'MyString', 1.5, NULL, '2018-01-16 21:37:55.822044', '2018-01-16 21:37:55.822044', 980190962)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "logs" ("name", "phone", "currency", "loan_duration_months", "loan_purpose", "loan_amount", "verdict", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', NULL, 'MyString', 1.5, NULL, '2018-01-16 21:37:55.822044', '2018-01-16 21:37:55.822044', 298486374)[0m
+  [1m[35m (133.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------------------------------
+ConstructTreeWorkerTest: test_#perform_returns_true_from_Analyzer.new.sync
+--------------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.2ms)[0m  [1m[31mDELETE FROM "logs"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "logs" ("name", "phone", "currency", "loan_duration_months", "loan_purpose", "loan_amount", "verdict", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', NULL, 'MyString', 1.5, NULL, '2018-01-16 21:38:17.028597', '2018-01-16 21:38:17.028597', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "logs" ("name", "phone", "currency", "loan_duration_months", "loan_purpose", "loan_amount", "verdict", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', NULL, 'MyString', 1.5, NULL, '2018-01-16 21:38:17.028597', '2018-01-16 21:38:17.028597', 298486374)[0m
+  [1m[35m (81.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------------------------------
+ConstructTreeWorkerTest: test_#perform_returns_true_from_Analyzer.new.sync
+--------------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.2ms)[0m  [1m[31mDELETE FROM "logs"[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "logs" ("name", "phone", "currency", "loan_duration_months", "loan_purpose", "loan_amount", "verdict", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', NULL, 'MyString', 1.5, NULL, '2018-01-16 21:44:50.996810', '2018-01-16 21:44:50.996810', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "logs" ("name", "phone", "currency", "loan_duration_months", "loan_purpose", "loan_amount", "verdict", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', NULL, 'MyString', 1.5, NULL, '2018-01-16 21:44:50.996810', '2018-01-16 21:44:50.996810', 298486374)[0m
+  [1m[35m (78.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------------------------------------------
+ConstructTreeWorkerTest: test_#perform_executes_when_the_tree_does_not_exist
+----------------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------------------------
+ConstructTreeWorkerTest: test_#perform_executes_when_the_tree_exists
+--------------------------------------------------------------------
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "logs"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "logs" ("name", "phone", "currency", "loan_duration_months", "loan_purpose", "loan_amount", "verdict", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', NULL, 'MyString', 1.5, NULL, '2018-01-16 22:31:56.425200', '2018-01-16 22:31:56.425200', 980190962)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "logs" ("name", "phone", "currency", "loan_duration_months", "loan_purpose", "loan_amount", "verdict", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', NULL, 'MyString', 1.5, NULL, '2018-01-16 22:31:56.425200', '2018-01-16 22:31:56.425200', 298486374)[0m
+  [1m[35m (170.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------------------------------------------
+ConstructTreeWorkerTest: test_#perform_executes_when_the_tree_does_not_exist
+----------------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------------------------
+ConstructTreeWorkerTest: test_#perform_executes_when_the_tree_exists
+--------------------------------------------------------------------
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.5ms)[0m  [1m[31mDELETE FROM "logs"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "logs" ("name", "phone", "currency", "loan_duration_months", "loan_purpose", "loan_amount", "verdict", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', NULL, 'MyString', 1.5, NULL, '2018-01-16 22:32:56.959974', '2018-01-16 22:32:56.959974', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "logs" ("name", "phone", "currency", "loan_duration_months", "loan_purpose", "loan_amount", "verdict", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', NULL, 'MyString', 1.5, NULL, '2018-01-16 22:32:56.959974', '2018-01-16 22:32:56.959974', 298486374)[0m
+  [1m[35m (79.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------------------------------------------
+ConstructTreeWorkerTest: test_#perform_executes_when_the_tree_does_not_exist
+----------------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------------------------
+ConstructTreeWorkerTest: test_#perform_executes_when_the_tree_exists
+--------------------------------------------------------------------
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "logs"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "logs" ("name", "phone", "currency", "loan_duration_months", "loan_purpose", "loan_amount", "verdict", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', NULL, 'MyString', 1.5, NULL, '2018-01-16 22:36:48.063268', '2018-01-16 22:36:48.063268', 980190962)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "logs" ("name", "phone", "currency", "loan_duration_months", "loan_purpose", "loan_amount", "verdict", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', NULL, 'MyString', 1.5, NULL, '2018-01-16 22:36:48.063268', '2018-01-16 22:36:48.063268', 298486374)[0m
+  [1m[35m (215.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------------------------------
+ConstructTreeWorkerTest: test_ConstructTreeWorker_is_queued
+-----------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.5ms)[0m  [1m[31mDELETE FROM "logs"[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "logs" ("name", "phone", "currency", "loan_duration_months", "loan_purpose", "loan_amount", "verdict", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', NULL, 'MyString', 1.5, NULL, '2018-01-16 22:37:20.044971', '2018-01-16 22:37:20.044971', 980190962)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "logs" ("name", "phone", "currency", "loan_duration_months", "loan_purpose", "loan_amount", "verdict", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', NULL, 'MyString', 1.5, NULL, '2018-01-16 22:37:20.044971', '2018-01-16 22:37:20.044971', 298486374)[0m
+  [1m[35m (78.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------------------------------
+ConstructTreeWorkerTest: test_ConstructTreeWorker_is_queued
+-----------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "logs"[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "logs" ("name", "phone", "currency", "loan_duration_months", "loan_purpose", "loan_amount", "verdict", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', NULL, 'MyString', 1.5, NULL, '2018-01-16 22:40:22.181382', '2018-01-16 22:40:22.181382', 980190962)[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "logs" ("name", "phone", "currency", "loan_duration_months", "loan_purpose", "loan_amount", "verdict", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', NULL, 'MyString', 1.5, NULL, '2018-01-16 22:40:22.181382', '2018-01-16 22:40:22.181382', 298486374)[0m
+  [1m[35m (97.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------------------------------------------------
+AnalyzerTest: test_check_that_the_decision_tree_hits_the_standard_of_>75%_accuracy
+----------------------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------------------------
+ConstructTreeWorkerTest: test_ConstructTreeWorker_is_queued_properly
+--------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.8ms)[0m  [1m[31mDELETE FROM "logs"[0m
+  [1m[36mFixture Insert (0.5ms)[0m  [1m[32mINSERT INTO "logs" ("name", "phone", "currency", "loan_duration_months", "loan_purpose", "loan_amount", "verdict", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', NULL, 'MyString', 1.5, NULL, '2018-01-16 22:41:21.120539', '2018-01-16 22:41:21.120539', 980190962)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "logs" ("name", "phone", "currency", "loan_duration_months", "loan_purpose", "loan_amount", "verdict", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', NULL, 'MyString', 1.5, NULL, '2018-01-16 22:41:21.120539', '2018-01-16 22:41:21.120539', 298486374)[0m
+  [1m[35m (75.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------------------------------------------------
+AnalyzerTest: test_check_that_the_decision_tree_hits_the_standard_of_>75%_accuracy
+----------------------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------------------------
+ConstructTreeWorkerTest: test_ConstructTreeWorker_is_queued_properly
+--------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (1.2ms)[0m  [1m[31mDELETE FROM "logs"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "logs" ("name", "phone", "currency", "loan_duration_months", "loan_purpose", "loan_amount", "verdict", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', NULL, 'MyString', 1.5, NULL, '2018-01-16 22:42:37.283488', '2018-01-16 22:42:37.283488', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "logs" ("name", "phone", "currency", "loan_duration_months", "loan_purpose", "loan_amount", "verdict", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', NULL, 'MyString', 1.5, NULL, '2018-01-16 22:42:37.283488', '2018-01-16 22:42:37.283488', 298486374)[0m
+  [1m[35m (84.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------------------------
+ConstructTreeWorkerTest: test_ConstructTreeWorker_is_queued_properly
+--------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------------------------------------------------
+AnalyzerTest: test_check_that_the_decision_tree_hits_the_standard_of_>75%_accuracy
+----------------------------------------------------------------------------------
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.8ms)[0m  [1m[31mDELETE FROM "logs"[0m
+  [1m[36mFixture Insert (0.4ms)[0m  [1m[32mINSERT INTO "logs" ("name", "phone", "currency", "loan_duration_months", "loan_purpose", "loan_amount", "verdict", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', NULL, 'MyString', 1.5, NULL, '2018-01-16 22:43:13.189118', '2018-01-16 22:43:13.189118', 980190962)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "logs" ("name", "phone", "currency", "loan_duration_months", "loan_purpose", "loan_amount", "verdict", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', NULL, 'MyString', 1.5, NULL, '2018-01-16 22:43:13.189118', '2018-01-16 22:43:13.189118', 298486374)[0m
+  [1m[35m (87.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------------------------------------------------
+AnalyzerTest: test_check_that_the_decision_tree_hits_the_standard_of_>70%_accuracy
+----------------------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------------------------
+ConstructTreeWorkerTest: test_ConstructTreeWorker_is_queued_properly
+--------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.9ms)[0m  [1m[31mDELETE FROM "logs"[0m
+  [1m[36mFixture Insert (0.5ms)[0m  [1m[32mINSERT INTO "logs" ("name", "phone", "currency", "loan_duration_months", "loan_purpose", "loan_amount", "verdict", "created_at", "updated_at", "id") VALUES ('Kirill Kozlov', '(123) 222 - 2222', 'CAD', 55, 'New car', 1000.0, 1, '2018-01-16 22:54:01.886216', '2018-01-16 22:54:01.886216', 201799169)[0m
+  [1m[35m (89.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------------------------------------------------
+AnalyzerTest: test_check_that_the_decision_tree_hits_the_standard_of_>70%_accuracy
+----------------------------------------------------------------------------------
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------
+LogTest: test_invalid_without_email
+-----------------------------------
+  [1m[36mLog Load (0.6ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-----------------------
+LogTest: test_valid_log
+-----------------------
+  [1m[36mLog Load (0.1ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------
+LogTest: test_invalid_without_name
+----------------------------------
+  [1m[36mLog Load (0.1ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------------------------
+ConstructTreeWorkerTest: test_ConstructTreeWorker_is_queued_properly
+--------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.2ms)[0m  [1m[31mDELETE FROM "logs"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "logs" ("name", "phone", "currency", "loan_duration_months", "loan_purpose", "loan_amount", "verdict", "created_at", "updated_at", "id") VALUES ('Kirill Kozlov', '(123) 222 - 2222', 'CAD', 55, 'New car', 1000.0, 1, '2018-01-16 22:54:39.031726', '2018-01-16 22:54:39.031726', 201799169)[0m
+  [1m[35m (86.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------------------------------------------------
+AnalyzerTest: test_check_that_the_decision_tree_hits_the_standard_of_>70%_accuracy
+----------------------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------------------------
+ConstructTreeWorkerTest: test_ConstructTreeWorker_is_queued_properly
+--------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------
+LogTest: test_invalid_without_email
+-----------------------------------
+  [1m[36mLog Load (0.2ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------
+LogTest: test_invalid_without_name
+----------------------------------
+  [1m[36mLog Load (0.1ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+-----------------------
+LogTest: test_valid_log
+-----------------------
+  [1m[36mLog Load (0.1ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (1.1ms)[0m  [1m[31mDELETE FROM "logs"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "logs" ("name", "phone", "currency", "loan_duration_months", "loan_purpose", "loan_amount", "verdict", "created_at", "updated_at", "id") VALUES ('Kirill Kozlov', '(123) 222 - 2222', 'CAD', 55, 'New car', 1000.0, 1, '2018-01-16 22:56:27.419934', '2018-01-16 22:56:27.419934', 201799169)[0m
+  [1m[35m (138.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------------------------------------------------
+AnalyzerTest: test_check_that_the_decision_tree_hits_the_standard_of_>70%_accuracy
+----------------------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------------------------
+ConstructTreeWorkerTest: test_ConstructTreeWorker_is_queued_properly
+--------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------
+LogTest: test_invalid_without_loan_duration_months
+--------------------------------------------------
+  [1m[36mLog Load (0.3ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------
+LogTest: test_invalid_without_verdict
+-------------------------------------
+  [1m[36mLog Load (0.1ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------
+LogTest: test_invalid_without_currency
+--------------------------------------
+  [1m[36mLog Load (0.4ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------
+LogTest: test_invalid_without_email
+-----------------------------------
+  [1m[36mLog Load (0.1ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------------
+LogTest: test_invalid_without_loan_amount
+-----------------------------------------
+  [1m[36mLog Load (0.1ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------
+LogTest: test_invalid_without_loan_purpose
+------------------------------------------
+  [1m[36mLog Load (0.2ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------
+LogTest: test_invalid_without_name
+----------------------------------
+  [1m[36mLog Load (0.1ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-----------------------
+LogTest: test_valid_log
+-----------------------
+  [1m[36mLog Load (0.1ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.6ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "logs"[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "logs" ("name", "phone", "currency", "loan_duration_months", "loan_purpose", "loan_amount", "verdict", "created_at", "updated_at", "id") VALUES ('Kirill Kozlov', '(123) 222 - 2222', 'CAD', 55, 'New car', 1000.0, 1, '2018-01-16 22:57:37.049054', '2018-01-16 22:57:37.049054', 201799169)[0m
+  [1m[35m (92.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------------------------------------------------
+AnalyzerTest: test_check_that_the_decision_tree_hits_the_standard_of_>70%_accuracy
+----------------------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------------------------
+ConstructTreeWorkerTest: test_ConstructTreeWorker_is_queued_properly
+--------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------
+LogTest: test_invalid_without_loan_purpose
+------------------------------------------
+  [1m[36mLog Load (0.3ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------------
+LogTest: test_invalid_without_loan_amount
+-----------------------------------------
+  [1m[36mLog Load (0.1ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------
+LogTest: test_invalid_without_name
+----------------------------------
+  [1m[36mLog Load (0.1ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------
+LogTest: test_invalid_without_email
+-----------------------------------
+  [1m[36mLog Load (0.1ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------
+LogTest: test_invalid_without_verdict
+-------------------------------------
+  [1m[36mLog Load (0.1ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------
+LogTest: test_invalid_without_currency
+--------------------------------------
+  [1m[36mLog Load (0.1ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------
+LogTest: test_invalid_without_loan_duration_months
+--------------------------------------------------
+  [1m[36mLog Load (0.1ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-----------------------
+LogTest: test_valid_log
+-----------------------
+  [1m[36mLog Load (0.2ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "logs"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "logs" ("name", "phone", "currency", "loan_duration_months", "loan_purpose", "loan_amount", "verdict", "created_at", "updated_at", "id") VALUES ('Kirill Kozlov', '(123) 222 - 2222', 'CAD', 55, 'New car', 1000.0, 1, '2018-01-16 22:58:31.962292', '2018-01-16 22:58:31.962292', 201799169)[0m
+  [1m[35m (79.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------------------------
+ConstructTreeWorkerTest: test_ConstructTreeWorker_is_queued_properly
+--------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------------------------------------------------
+AnalyzerTest: test_check_that_the_decision_tree_hits_the_standard_of_>68%_accuracy
+----------------------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------
+LogTest: test_invalid_without_verdict
+-------------------------------------
+  [1m[36mLog Load (0.2ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------
+LogTest: test_invalid_without_loan_duration_months
+--------------------------------------------------
+  [1m[36mLog Load (0.1ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------
+LogTest: test_invalid_without_loan_purpose
+------------------------------------------
+  [1m[36mLog Load (0.1ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------
+LogTest: test_invalid_without_currency
+--------------------------------------
+  [1m[36mLog Load (0.1ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------------
+LogTest: test_invalid_without_loan_amount
+-----------------------------------------
+  [1m[36mLog Load (0.3ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------
+LogTest: test_invalid_without_email
+-----------------------------------
+  [1m[36mLog Load (0.1ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+-----------------------
+LogTest: test_valid_log
+-----------------------
+  [1m[36mLog Load (0.1ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------
+LogTest: test_invalid_without_name
+----------------------------------
+  [1m[36mLog Load (0.1ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.2ms)[0m  [1m[31mDELETE FROM "logs"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "logs" ("name", "phone", "currency", "loan_duration_months", "loan_purpose", "loan_amount", "verdict", "created_at", "updated_at", "id") VALUES ('Kirill Kozlov', '(123) 222 - 2222', 'CAD', 55, 'New car', 1000.0, 1, '2018-01-16 23:05:15.908797', '2018-01-16 23:05:15.908797', 201799169)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "logs" ("name", "phone", "currency", "loan_duration_months", "loan_purpose", "loan_amount", "verdict", "created_at", "updated_at", "id") VALUES ('Kirill Kozlov', '(123) 222 - 2222', 'USD', 55, 'New car', 1000.0, 1, '2018-01-16 23:05:15.908797', '2018-01-16 23:05:15.908797', 959946084)[0m
+  [1m[35m (75.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------------------------
+ConstructTreeWorkerTest: test_ConstructTreeWorker_is_queued_properly
+--------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------------------------------------------------
+AnalyzerTest: test_check_that_the_decision_tree_hits_the_standard_of_>68%_accuracy
+----------------------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------
+LogTest: test_invalid_without_loan_duration_months
+--------------------------------------------------
+  [1m[36mLog Load (0.3ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------------
+LogTest: test_invalid_without_loan_amount
+-----------------------------------------
+  [1m[36mLog Load (0.1ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------
+LogTest: test_invalid_without_email
+-----------------------------------
+  [1m[36mLog Load (0.1ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------
+LogTest: test_invalid_without_currency
+--------------------------------------
+  [1m[36mLog Load (0.2ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------
+LogTest: test_invalid_without_loan_purpose
+------------------------------------------
+  [1m[36mLog Load (0.1ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------
+LogTest: test_invalid_without_verdict
+-------------------------------------
+  [1m[36mLog Load (0.2ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-----------------------
+LogTest: test_valid_log
+-----------------------
+  [1m[36mLog Load (0.2ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------
+LogTest: test_invalid_without_name
+----------------------------------
+  [1m[36mLog Load (0.1ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------------------------
+StatsHelperTest: test_#sum_of_loans_returns_the_correct_array
+-------------------------------------------------------------
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT SUM("logs"."loan_amount") FROM "logs" WHERE "logs"."currency" = ? AND "logs"."verdict" = ?[0m  [["currency", "USD"], ["verdict", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT SUM("logs"."loan_amount") FROM "logs" WHERE "logs"."currency" = ? AND "logs"."verdict" = ?[0m  [["currency", "CAD"], ["verdict", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT SUM("logs"."loan_amount") FROM "logs" WHERE "logs"."currency" = ? AND "logs"."verdict" = ?[0m  [["currency", "EUR"], ["verdict", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT SUM("logs"."loan_amount") FROM "logs" WHERE "logs"."currency" = ? AND "logs"."verdict" = ?[0m  [["currency", "GBP"], ["verdict", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT SUM("logs"."loan_amount") FROM "logs" WHERE "logs"."currency" = ? AND "logs"."verdict" = ?[0m  [["currency", "JPY"], ["verdict", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.9ms)[0m  [1m[31mDELETE FROM "logs"[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "logs" ("name", "phone", "currency", "loan_duration_months", "loan_purpose", "loan_amount", "verdict", "created_at", "updated_at", "id") VALUES ('Kirill Kozlov', '(123) 222 - 2222', 'CAD', 55, 'New car', 1000.0, 1, '2018-01-16 23:06:10.099249', '2018-01-16 23:06:10.099249', 201799169)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "logs" ("name", "phone", "currency", "loan_duration_months", "loan_purpose", "loan_amount", "verdict", "created_at", "updated_at", "id") VALUES ('Kirill Kozlov', '(123) 222 - 2222', 'USD', 55, 'New car', 1000.0, 1, '2018-01-16 23:06:10.099249', '2018-01-16 23:06:10.099249', 959946084)[0m
+  [1m[35m (93.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------------------------
+ConstructTreeWorkerTest: test_ConstructTreeWorker_is_queued_properly
+--------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------
+LogTest: test_invalid_without_loan_duration_months
+--------------------------------------------------
+  [1m[36mLog Load (0.3ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------
+LogTest: test_invalid_without_email
+-----------------------------------
+  [1m[36mLog Load (0.1ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-----------------------
+LogTest: test_valid_log
+-----------------------
+  [1m[36mLog Load (0.2ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------------
+LogTest: test_invalid_without_loan_amount
+-----------------------------------------
+  [1m[36mLog Load (0.1ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------
+LogTest: test_invalid_without_loan_purpose
+------------------------------------------
+  [1m[36mLog Load (0.2ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------
+LogTest: test_invalid_without_name
+----------------------------------
+  [1m[36mLog Load (0.1ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------
+LogTest: test_invalid_without_verdict
+-------------------------------------
+  [1m[36mLog Load (0.2ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------
+LogTest: test_invalid_without_currency
+--------------------------------------
+  [1m[36mLog Load (0.1ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------------------------------------------------
+AnalyzerTest: test_check_that_the_decision_tree_hits_the_standard_of_>68%_accuracy
+----------------------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------------------
+StatsHelperTest: test_#sum_of_loans_returns_the_correct_string
+--------------------------------------------------------------
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT SUM("logs"."loan_amount") FROM "logs" WHERE "logs"."currency" = ? AND "logs"."verdict" = ?[0m  [["currency", "USD"], ["verdict", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT SUM("logs"."loan_amount") FROM "logs" WHERE "logs"."currency" = ? AND "logs"."verdict" = ?[0m  [["currency", "CAD"], ["verdict", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT SUM("logs"."loan_amount") FROM "logs" WHERE "logs"."currency" = ? AND "logs"."verdict" = ?[0m  [["currency", "EUR"], ["verdict", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT SUM("logs"."loan_amount") FROM "logs" WHERE "logs"."currency" = ? AND "logs"."verdict" = ?[0m  [["currency", "GBP"], ["verdict", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT SUM("logs"."loan_amount") FROM "logs" WHERE "logs"."currency" = ? AND "logs"."verdict" = ?[0m  [["currency", "JPY"], ["verdict", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "logs"[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "logs" ("name", "phone", "currency", "loan_duration_months", "loan_purpose", "loan_amount", "verdict", "created_at", "updated_at", "id") VALUES ('Kirill Kozlov', '(123) 222 - 2222', 'CAD', 55, 'New car', 1000.0, 1, '2018-01-16 23:07:52.465212', '2018-01-16 23:07:52.465212', 201799169)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "logs" ("name", "phone", "currency", "loan_duration_months", "loan_purpose", "loan_amount", "verdict", "created_at", "updated_at", "id") VALUES ('Kirill Kozlov', '(123) 222 - 2222', 'USD', 55, 'New car', 1000.0, 1, '2018-01-16 23:07:52.465212', '2018-01-16 23:07:52.465212', 959946084)[0m
+  [1m[35m (101.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------
+LogTest: test_invalid_without_loan_purpose
+------------------------------------------
+  [1m[36mLog Load (0.2ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------
+LogTest: test_invalid_without_name
+----------------------------------
+  [1m[36mLog Load (0.1ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------
+LogTest: test_invalid_without_loan_duration_months
+--------------------------------------------------
+  [1m[36mLog Load (0.1ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-----------------------
+LogTest: test_valid_log
+-----------------------
+  [1m[36mLog Load (0.1ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------
+LogTest: test_invalid_without_email
+-----------------------------------
+  [1m[36mLog Load (0.1ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------
+LogTest: test_invalid_without_verdict
+-------------------------------------
+  [1m[36mLog Load (0.1ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------
+LogTest: test_invalid_without_currency
+--------------------------------------
+  [1m[36mLog Load (0.1ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------------
+LogTest: test_invalid_without_loan_amount
+-----------------------------------------
+  [1m[36mLog Load (0.1ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------------------
+StatsHelperTest: test_#sum_of_loans_returns_the_correct_string
+--------------------------------------------------------------
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT SUM("logs"."loan_amount") FROM "logs" WHERE "logs"."currency" = ? AND "logs"."verdict" = ?[0m  [["currency", "USD"], ["verdict", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT SUM("logs"."loan_amount") FROM "logs" WHERE "logs"."currency" = ? AND "logs"."verdict" = ?[0m  [["currency", "CAD"], ["verdict", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT SUM("logs"."loan_amount") FROM "logs" WHERE "logs"."currency" = ? AND "logs"."verdict" = ?[0m  [["currency", "EUR"], ["verdict", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT SUM("logs"."loan_amount") FROM "logs" WHERE "logs"."currency" = ? AND "logs"."verdict" = ?[0m  [["currency", "GBP"], ["verdict", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT SUM("logs"."loan_amount") FROM "logs" WHERE "logs"."currency" = ? AND "logs"."verdict" = ?[0m  [["currency", "JPY"], ["verdict", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------------------------
+ConstructTreeWorkerTest: test_ConstructTreeWorker_is_queued_properly
+--------------------------------------------------------------------
+  [1m[35m (0.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------------------------------------------------
+AnalyzerTest: test_check_that_the_decision_tree_hits_the_standard_of_>65%_accuracy
+----------------------------------------------------------------------------------
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.9ms)[0m  [1m[31mDELETE FROM "logs"[0m
+  [1m[36mFixture Insert (0.6ms)[0m  [1m[32mINSERT INTO "logs" ("name", "phone", "currency", "loan_duration_months", "loan_purpose", "loan_amount", "verdict", "created_at", "updated_at", "id") VALUES ('Kirill Kozlov', '(123) 222 - 2222', 'CAD', 55, 'New car', 1000.0, 1, '2018-01-16 23:42:35.743112', '2018-01-16 23:42:35.743112', 201799169)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "logs" ("name", "phone", "currency", "loan_duration_months", "loan_purpose", "loan_amount", "verdict", "created_at", "updated_at", "id") VALUES ('Kirill Kozlov', '(123) 222 - 2222', 'USD', 55, 'New car', 1000.0, 1, '2018-01-16 23:42:35.743112', '2018-01-16 23:42:35.743112', 959946084)[0m
+  [1m[35m (85.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------
+LogTest: test_invalid_without_email
+-----------------------------------
+  [1m[36mLog Load (0.2ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------
+LogTest: test_invalid_without_loan_purpose
+------------------------------------------
+  [1m[36mLog Load (0.2ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------
+LogTest: test_invalid_without_verdict
+-------------------------------------
+  [1m[36mLog Load (0.3ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------
+LogTest: test_invalid_without_name
+----------------------------------
+  [1m[36mLog Load (0.2ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------------
+LogTest: test_invalid_without_loan_amount
+-----------------------------------------
+  [1m[36mLog Load (0.2ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-----------------------
+LogTest: test_valid_log
+-----------------------
+  [1m[36mLog Load (0.1ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------
+LogTest: test_invalid_without_loan_duration_months
+--------------------------------------------------
+  [1m[36mLog Load (0.1ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------
+LogTest: test_invalid_without_currency
+--------------------------------------
+  [1m[36mLog Load (0.1ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------------------------
+ConstructTreeWorkerTest: test_ConstructTreeWorker_is_queued_properly
+--------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------------------
+StatsHelperTest: test_#sum_of_loans_returns_the_correct_string
+--------------------------------------------------------------
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT SUM("logs"."loan_amount") FROM "logs" WHERE "logs"."currency" = ? AND "logs"."verdict" = ?[0m  [["currency", "USD"], ["verdict", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT SUM("logs"."loan_amount") FROM "logs" WHERE "logs"."currency" = ? AND "logs"."verdict" = ?[0m  [["currency", "CAD"], ["verdict", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT SUM("logs"."loan_amount") FROM "logs" WHERE "logs"."currency" = ? AND "logs"."verdict" = ?[0m  [["currency", "EUR"], ["verdict", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT SUM("logs"."loan_amount") FROM "logs" WHERE "logs"."currency" = ? AND "logs"."verdict" = ?[0m  [["currency", "GBP"], ["verdict", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT SUM("logs"."loan_amount") FROM "logs" WHERE "logs"."currency" = ? AND "logs"."verdict" = ?[0m  [["currency", "JPY"], ["verdict", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------------------------------------------------
+AnalyzerTest: test_check_that_the_decision_tree_hits_the_standard_of_>65%_accuracy
+----------------------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------
+CurrencyTest: test_currency_test
+--------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.9ms)[0m  [1m[31mDELETE FROM "logs"[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "logs" ("name", "phone", "currency", "loan_duration_months", "loan_purpose", "loan_amount", "verdict", "created_at", "updated_at", "id") VALUES ('Kirill Kozlov', '(123) 222 - 2222', 'CAD', 55, 'New car', 1000.0, 1, '2018-01-16 23:44:04.435044', '2018-01-16 23:44:04.435044', 201799169)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "logs" ("name", "phone", "currency", "loan_duration_months", "loan_purpose", "loan_amount", "verdict", "created_at", "updated_at", "id") VALUES ('Kirill Kozlov', '(123) 222 - 2222', 'USD', 55, 'New car', 1000.0, 1, '2018-01-16 23:44:04.435044', '2018-01-16 23:44:04.435044', 959946084)[0m
+  [1m[35m (163.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------------------------
+ConstructTreeWorkerTest: test_ConstructTreeWorker_is_queued_properly
+--------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------
+LogTest: test_invalid_without_loan_purpose
+------------------------------------------
+  [1m[36mLog Load (0.2ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+-----------------------
+LogTest: test_valid_log
+-----------------------
+  [1m[36mLog Load (0.2ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------
+LogTest: test_invalid_without_currency
+--------------------------------------
+  [1m[36mLog Load (0.1ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------
+LogTest: test_invalid_without_name
+----------------------------------
+  [1m[36mLog Load (0.3ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------
+LogTest: test_invalid_without_verdict
+-------------------------------------
+  [1m[36mLog Load (0.1ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------
+LogTest: test_invalid_without_email
+-----------------------------------
+  [1m[36mLog Load (0.1ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------------
+LogTest: test_invalid_without_loan_amount
+-----------------------------------------
+  [1m[36mLog Load (0.1ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------
+LogTest: test_invalid_without_loan_duration_months
+--------------------------------------------------
+  [1m[36mLog Load (0.1ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------
+CurrencyTest: test_currency_test
+--------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------------------------------------------------
+AnalyzerTest: test_check_that_the_decision_tree_hits_the_standard_of_>65%_accuracy
+----------------------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------------------
+StatsHelperTest: test_#sum_of_loans_returns_the_correct_string
+--------------------------------------------------------------
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT SUM("logs"."loan_amount") FROM "logs" WHERE "logs"."currency" = ? AND "logs"."verdict" = ?[0m  [["currency", "USD"], ["verdict", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT SUM("logs"."loan_amount") FROM "logs" WHERE "logs"."currency" = ? AND "logs"."verdict" = ?[0m  [["currency", "CAD"], ["verdict", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT SUM("logs"."loan_amount") FROM "logs" WHERE "logs"."currency" = ? AND "logs"."verdict" = ?[0m  [["currency", "EUR"], ["verdict", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT SUM("logs"."loan_amount") FROM "logs" WHERE "logs"."currency" = ? AND "logs"."verdict" = ?[0m  [["currency", "GBP"], ["verdict", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT SUM("logs"."loan_amount") FROM "logs" WHERE "logs"."currency" = ? AND "logs"."verdict" = ?[0m  [["currency", "JPY"], ["verdict", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "logs"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "logs" ("name", "phone", "currency", "loan_duration_months", "loan_purpose", "loan_amount", "verdict", "created_at", "updated_at", "id") VALUES ('Kirill Kozlov', '(123) 222 - 2222', 'CAD', 55, 'New car', 1000.0, 1, '2018-01-16 23:47:08.348229', '2018-01-16 23:47:08.348229', 201799169)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "logs" ("name", "phone", "currency", "loan_duration_months", "loan_purpose", "loan_amount", "verdict", "created_at", "updated_at", "id") VALUES ('Kirill Kozlov', '(123) 222 - 2222', 'USD', 55, 'New car', 1000.0, 1, '2018-01-16 23:47:08.348229', '2018-01-16 23:47:08.348229', 959946084)[0m
+  [1m[35m (78.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------------------
+StatsHelperTest: test_#sum_of_loans_returns_the_correct_string
+--------------------------------------------------------------
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT SUM("logs"."loan_amount") FROM "logs" WHERE "logs"."currency" = ? AND "logs"."verdict" = ?[0m  [["currency", "USD"], ["verdict", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT SUM("logs"."loan_amount") FROM "logs" WHERE "logs"."currency" = ? AND "logs"."verdict" = ?[0m  [["currency", "CAD"], ["verdict", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT SUM("logs"."loan_amount") FROM "logs" WHERE "logs"."currency" = ? AND "logs"."verdict" = ?[0m  [["currency", "EUR"], ["verdict", 1]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT SUM("logs"."loan_amount") FROM "logs" WHERE "logs"."currency" = ? AND "logs"."verdict" = ?[0m  [["currency", "GBP"], ["verdict", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT SUM("logs"."loan_amount") FROM "logs" WHERE "logs"."currency" = ? AND "logs"."verdict" = ?[0m  [["currency", "JPY"], ["verdict", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-----------------------
+LogTest: test_valid_log
+-----------------------
+  [1m[36mLog Load (0.2ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------
+LogTest: test_invalid_without_loan_duration_months
+--------------------------------------------------
+  [1m[36mLog Load (0.1ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------
+LogTest: test_invalid_without_name
+----------------------------------
+  [1m[36mLog Load (0.1ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------
+LogTest: test_invalid_without_currency
+--------------------------------------
+  [1m[36mLog Load (0.1ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------
+LogTest: test_invalid_without_email
+-----------------------------------
+  [1m[36mLog Load (0.1ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------
+LogTest: test_invalid_without_verdict
+-------------------------------------
+  [1m[36mLog Load (0.2ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------
+LogTest: test_invalid_without_loan_purpose
+------------------------------------------
+  [1m[36mLog Load (0.2ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------------
+LogTest: test_invalid_without_loan_amount
+-----------------------------------------
+  [1m[36mLog Load (0.1ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------------------------
+ConstructTreeWorkerTest: test_ConstructTreeWorker_is_queued_properly
+--------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------
+CurrencyTest: test_currency_test
+--------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------------------------------------------------
+AnalyzerTest: test_check_that_the_decision_tree_hits_the_standard_of_>65%_accuracy
+----------------------------------------------------------------------------------
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.8ms)[0m  [1m[31mDELETE FROM "logs"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "logs" ("name", "phone", "currency", "loan_duration_months", "loan_purpose", "loan_amount", "verdict", "created_at", "updated_at", "id") VALUES ('Kirill Kozlov', '(123) 222 - 2222', 'CAD', 55, 'New car', 1000.0, 1, '2018-01-16 23:47:49.531121', '2018-01-16 23:47:49.531121', 201799169)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "logs" ("name", "phone", "currency", "loan_duration_months", "loan_purpose", "loan_amount", "verdict", "created_at", "updated_at", "id") VALUES ('Kirill Kozlov', '(123) 222 - 2222', 'USD', 55, 'New car', 1000.0, 1, '2018-01-16 23:47:49.531121', '2018-01-16 23:47:49.531121', 959946084)[0m
+  [1m[35m (86.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------
+CurrencyTest: test_currency_test
+--------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------------
+LogTest: test_invalid_without_loan_amount
+-----------------------------------------
+  [1m[36mLog Load (0.3ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-----------------------
+LogTest: test_valid_log
+-----------------------
+  [1m[36mLog Load (0.1ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------
+LogTest: test_invalid_without_email
+-----------------------------------
+  [1m[36mLog Load (0.1ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------
+LogTest: test_invalid_without_verdict
+-------------------------------------
+  [1m[36mLog Load (0.1ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------
+LogTest: test_invalid_without_loan_purpose
+------------------------------------------
+  [1m[36mLog Load (0.1ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------
+LogTest: test_invalid_without_name
+----------------------------------
+  [1m[36mLog Load (0.1ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------
+LogTest: test_invalid_without_currency
+--------------------------------------
+  [1m[36mLog Load (0.1ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------
+LogTest: test_invalid_without_loan_duration_months
+--------------------------------------------------
+  [1m[36mLog Load (0.1ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------------------------------------------------
+AnalyzerTest: test_check_that_the_decision_tree_hits_the_standard_of_>65%_accuracy
+----------------------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------------------
+StatsHelperTest: test_#sum_of_loans_returns_the_correct_string
+--------------------------------------------------------------
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT SUM("logs"."loan_amount") FROM "logs" WHERE "logs"."currency" = ? AND "logs"."verdict" = ?[0m  [["currency", "USD"], ["verdict", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT SUM("logs"."loan_amount") FROM "logs" WHERE "logs"."currency" = ? AND "logs"."verdict" = ?[0m  [["currency", "CAD"], ["verdict", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT SUM("logs"."loan_amount") FROM "logs" WHERE "logs"."currency" = ? AND "logs"."verdict" = ?[0m  [["currency", "EUR"], ["verdict", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT SUM("logs"."loan_amount") FROM "logs" WHERE "logs"."currency" = ? AND "logs"."verdict" = ?[0m  [["currency", "GBP"], ["verdict", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT SUM("logs"."loan_amount") FROM "logs" WHERE "logs"."currency" = ? AND "logs"."verdict" = ?[0m  [["currency", "JPY"], ["verdict", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------------------------
+ConstructTreeWorkerTest: test_ConstructTreeWorker_is_queued_properly
+--------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (1.9ms)[0m  [1m[31mDELETE FROM "logs"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "logs" ("name", "phone", "currency", "loan_duration_months", "loan_purpose", "loan_amount", "verdict", "created_at", "updated_at", "id") VALUES ('Kirill Kozlov', '(123) 222 - 2222', 'CAD', 55, 'New car', 1000.0, 1, '2018-01-16 23:48:58.526512', '2018-01-16 23:48:58.526512', 201799169)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "logs" ("name", "phone", "currency", "loan_duration_months", "loan_purpose", "loan_amount", "verdict", "created_at", "updated_at", "id") VALUES ('Kirill Kozlov', '(123) 222 - 2222', 'USD', 55, 'New car', 1000.0, 1, '2018-01-16 23:48:58.526512', '2018-01-16 23:48:58.526512', 959946084)[0m
+  [1m[35m (77.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------------
+LogTest: test_invalid_without_loan_amount
+-----------------------------------------
+  [1m[36mLog Load (0.3ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------
+LogTest: test_invalid_without_loan_duration_months
+--------------------------------------------------
+  [1m[36mLog Load (0.2ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------
+LogTest: test_invalid_without_name
+----------------------------------
+  [1m[36mLog Load (0.2ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-----------------------
+LogTest: test_valid_log
+-----------------------
+  [1m[36mLog Load (0.2ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------
+LogTest: test_invalid_without_verdict
+-------------------------------------
+  [1m[36mLog Load (0.1ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------
+LogTest: test_invalid_without_currency
+--------------------------------------
+  [1m[36mLog Load (0.1ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------
+LogTest: test_invalid_without_loan_purpose
+------------------------------------------
+  [1m[36mLog Load (0.1ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------
+LogTest: test_invalid_without_email
+-----------------------------------
+  [1m[36mLog Load (0.2ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------------------
+StatsHelperTest: test_#sum_of_loans_returns_the_correct_string
+--------------------------------------------------------------
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT SUM("logs"."loan_amount") FROM "logs" WHERE "logs"."currency" = ? AND "logs"."verdict" = ?[0m  [["currency", "USD"], ["verdict", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT SUM("logs"."loan_amount") FROM "logs" WHERE "logs"."currency" = ? AND "logs"."verdict" = ?[0m  [["currency", "CAD"], ["verdict", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT SUM("logs"."loan_amount") FROM "logs" WHERE "logs"."currency" = ? AND "logs"."verdict" = ?[0m  [["currency", "EUR"], ["verdict", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT SUM("logs"."loan_amount") FROM "logs" WHERE "logs"."currency" = ? AND "logs"."verdict" = ?[0m  [["currency", "GBP"], ["verdict", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT SUM("logs"."loan_amount") FROM "logs" WHERE "logs"."currency" = ? AND "logs"."verdict" = ?[0m  [["currency", "JPY"], ["verdict", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------------------------
+ConstructTreeWorkerTest: test_ConstructTreeWorker_is_queued_properly
+--------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------------------------------------------------
+AnalyzerTest: test_check_that_the_decision_tree_hits_the_standard_of_>65%_accuracy
+----------------------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------
+CurrencyTest: test_currency_test
+--------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.9ms)[0m  [1m[31mDELETE FROM "logs"[0m
+  [1m[36mFixture Insert (0.4ms)[0m  [1m[32mINSERT INTO "logs" ("name", "phone", "currency", "loan_duration_months", "loan_purpose", "loan_amount", "verdict", "created_at", "updated_at", "id") VALUES ('Kirill Kozlov', '(123) 222 - 2222', 'CAD', 55, 'New car', 1000.0, 1, '2018-01-17 00:22:37.297275', '2018-01-17 00:22:37.297275', 201799169)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "logs" ("name", "phone", "currency", "loan_duration_months", "loan_purpose", "loan_amount", "verdict", "created_at", "updated_at", "id") VALUES ('Kirill Kozlov', '(123) 222 - 2222', 'USD', 55, 'New car', 1000.0, 1, '2018-01-17 00:22:37.297275', '2018-01-17 00:22:37.297275', 959946084)[0m
+  [1m[35m (63.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------------------------
+ConstructTreeWorkerTest: test_ConstructTreeWorker_is_queued_properly
+--------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------
+LogTest: test_invalid_without_loan_purpose
+------------------------------------------
+  [1m[36mLog Load (0.2ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------
+LogTest: test_invalid_without_loan_duration_months
+--------------------------------------------------
+  [1m[36mLog Load (0.1ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------------
+LogTest: test_invalid_without_loan_amount
+-----------------------------------------
+  [1m[36mLog Load (0.1ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------
+LogTest: test_invalid_without_currency
+--------------------------------------
+  [1m[36mLog Load (0.1ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------
+LogTest: test_invalid_without_email
+-----------------------------------
+  [1m[36mLog Load (0.1ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------
+LogTest: test_invalid_without_verdict
+-------------------------------------
+  [1m[36mLog Load (0.1ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-----------------------
+LogTest: test_valid_log
+-----------------------
+  [1m[36mLog Load (0.1ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------
+LogTest: test_invalid_without_name
+----------------------------------
+  [1m[36mLog Load (0.2ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------------------------------------------------
+AnalyzerTest: test_check_that_the_decision_tree_hits_the_standard_of_>65%_accuracy
+----------------------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------
+CurrencyTest: test_currency_test
+--------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------------------
+StatsHelperTest: test_#sum_of_loans_returns_the_correct_string
+--------------------------------------------------------------
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT SUM("logs"."loan_amount") FROM "logs" WHERE "logs"."currency" = ? AND "logs"."verdict" = ?[0m  [["currency", "USD"], ["verdict", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT SUM("logs"."loan_amount") FROM "logs" WHERE "logs"."currency" = ? AND "logs"."verdict" = ?[0m  [["currency", "CAD"], ["verdict", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT SUM("logs"."loan_amount") FROM "logs" WHERE "logs"."currency" = ? AND "logs"."verdict" = ?[0m  [["currency", "EUR"], ["verdict", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT SUM("logs"."loan_amount") FROM "logs" WHERE "logs"."currency" = ? AND "logs"."verdict" = ?[0m  [["currency", "GBP"], ["verdict", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT SUM("logs"."loan_amount") FROM "logs" WHERE "logs"."currency" = ? AND "logs"."verdict" = ?[0m  [["currency", "JPY"], ["verdict", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "logs"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "logs" ("name", "phone", "currency", "loan_duration_months", "loan_purpose", "loan_amount", "verdict", "created_at", "updated_at", "id") VALUES ('Kirill Kozlov', '(123) 222 - 2222', 'CAD', 55, 'New car', 1000.0, 1, '2018-01-17 00:30:35.042218', '2018-01-17 00:30:35.042218', 201799169)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "logs" ("name", "phone", "currency", "loan_duration_months", "loan_purpose", "loan_amount", "verdict", "created_at", "updated_at", "id") VALUES ('Kirill Kozlov', '(123) 222 - 2222', 'USD', 55, 'New car', 1000.0, 1, '2018-01-17 00:30:35.042218', '2018-01-17 00:30:35.042218', 959946084)[0m
+  [1m[35m (55.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------------------
+StatsHelperTest: test_#sum_of_loans_returns_the_correct_string
+--------------------------------------------------------------
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT SUM("logs"."loan_amount") FROM "logs" WHERE "logs"."currency" = ? AND "logs"."verdict" = ?[0m  [["currency", "USD"], ["verdict", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT SUM("logs"."loan_amount") FROM "logs" WHERE "logs"."currency" = ? AND "logs"."verdict" = ?[0m  [["currency", "CAD"], ["verdict", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT SUM("logs"."loan_amount") FROM "logs" WHERE "logs"."currency" = ? AND "logs"."verdict" = ?[0m  [["currency", "EUR"], ["verdict", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT SUM("logs"."loan_amount") FROM "logs" WHERE "logs"."currency" = ? AND "logs"."verdict" = ?[0m  [["currency", "GBP"], ["verdict", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT SUM("logs"."loan_amount") FROM "logs" WHERE "logs"."currency" = ? AND "logs"."verdict" = ?[0m  [["currency", "JPY"], ["verdict", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-----------------------
+LogTest: test_valid_log
+-----------------------
+  [1m[36mLog Load (0.2ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------
+LogTest: test_invalid_without_loan_duration_months
+--------------------------------------------------
+  [1m[36mLog Load (0.2ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------
+LogTest: test_invalid_without_verdict
+-------------------------------------
+  [1m[36mLog Load (0.1ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------
+LogTest: test_invalid_without_name
+----------------------------------
+  [1m[36mLog Load (0.1ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------
+LogTest: test_invalid_without_currency
+--------------------------------------
+  [1m[36mLog Load (0.1ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------
+LogTest: test_invalid_without_email
+-----------------------------------
+  [1m[36mLog Load (0.1ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------
+LogTest: test_invalid_without_loan_purpose
+------------------------------------------
+  [1m[36mLog Load (0.1ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------------
+LogTest: test_invalid_without_loan_amount
+-----------------------------------------
+  [1m[36mLog Load (0.1ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------------------------
+ConstructTreeWorkerTest: test_ConstructTreeWorker_is_queued_properly
+--------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------------------------------------------------
+AnalyzerTest: test_check_that_the_decision_tree_hits_the_standard_of_>65%_accuracy
+----------------------------------------------------------------------------------
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "logs"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "logs" ("name", "phone", "currency", "loan_duration_months", "loan_purpose", "loan_amount", "verdict", "created_at", "updated_at", "id") VALUES ('Kirill Kozlov', '(123) 222 - 2222', 'CAD', 55, 'New car', 1000.0, 1, '2018-01-17 00:45:14.807915', '2018-01-17 00:45:14.807915', 201799169)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "logs" ("name", "phone", "currency", "loan_duration_months", "loan_purpose", "loan_amount", "verdict", "created_at", "updated_at", "id") VALUES ('Kirill Kozlov', '(123) 222 - 2222', 'USD', 55, 'New car', 1000.0, 1, '2018-01-17 00:45:14.807915', '2018-01-17 00:45:14.807915', 959946084)[0m
+  [1m[35m (56.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------------------
+StatsHelperTest: test_#sum_of_loans_returns_the_correct_string
+--------------------------------------------------------------
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT SUM("logs"."loan_amount") FROM "logs" WHERE "logs"."currency" = ? AND "logs"."verdict" = ?[0m  [["currency", "USD"], ["verdict", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT SUM("logs"."loan_amount") FROM "logs" WHERE "logs"."currency" = ? AND "logs"."verdict" = ?[0m  [["currency", "CAD"], ["verdict", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT SUM("logs"."loan_amount") FROM "logs" WHERE "logs"."currency" = ? AND "logs"."verdict" = ?[0m  [["currency", "EUR"], ["verdict", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT SUM("logs"."loan_amount") FROM "logs" WHERE "logs"."currency" = ? AND "logs"."verdict" = ?[0m  [["currency", "GBP"], ["verdict", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT SUM("logs"."loan_amount") FROM "logs" WHERE "logs"."currency" = ? AND "logs"."verdict" = ?[0m  [["currency", "JPY"], ["verdict", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-----------------------
+LogTest: test_valid_log
+-----------------------
+  [1m[36mLog Load (0.2ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------
+LogTest: test_invalid_without_loan_purpose
+------------------------------------------
+  [1m[36mLog Load (0.1ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------
+LogTest: test_invalid_without_verdict
+-------------------------------------
+  [1m[36mLog Load (0.1ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------------
+LogTest: test_invalid_without_loan_amount
+-----------------------------------------
+  [1m[36mLog Load (0.1ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------------
+LogTest: test_invalid_without_telephone
+---------------------------------------
+  [1m[36mLog Load (0.1ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------
+LogTest: test_invalid_without_currency
+--------------------------------------
+  [1m[36mLog Load (0.1ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------
+LogTest: test_invalid_without_loan_duration_months
+--------------------------------------------------
+  [1m[36mLog Load (0.2ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------
+LogTest: test_invalid_without_name
+----------------------------------
+  [1m[36mLog Load (0.2ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------------------------
+ConstructTreeWorkerTest: test_ConstructTreeWorker_is_queued_properly
+--------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------------------------------------------------
+AnalyzerTest: test_check_that_the_decision_tree_hits_the_standard_of_>65%_accuracy
+----------------------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------
+ProfileTest: test_invalid_without_name
+--------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------------------------------
+ProfileTest: test_invalid_without_a_properly_formatted_telephone
+----------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------
+ProfileTest: test_profile_log
+-----------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "logs"[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "logs" ("name", "phone", "currency", "loan_duration_months", "loan_purpose", "loan_amount", "verdict", "created_at", "updated_at", "id") VALUES ('Kirill Kozlov', '(123) 222 - 2222', 'CAD', 55, 'New car', 1000.0, 1, '2018-01-17 01:05:00.424996', '2018-01-17 01:05:00.424996', 201799169)[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "logs" ("name", "phone", "currency", "loan_duration_months", "loan_purpose", "loan_amount", "verdict", "created_at", "updated_at", "id") VALUES ('Kirill Kozlov', '(123) 222 - 2222', 'USD', 55, 'New car', 1000.0, 1, '2018-01-17 01:05:00.424996', '2018-01-17 01:05:00.424996', 959946084)[0m
+  [1m[35m (58.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------------------------------------
+ProfileTest: test_#testing_array_returns_a_complete_array_of_valid_length
+-------------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------------------------------
+ProfileTest: test_invalid_without_a_properly_formatted_telephone
+----------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------
+ProfileTest: test_profile_log
+-----------------------------
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------
+ProfileTest: test_invalid_without_name
+--------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------
+LogTest: test_invalid_without_loan_duration_months
+--------------------------------------------------
+  [1m[36mLog Load (0.2ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-----------------------
+LogTest: test_valid_log
+-----------------------
+  [1m[36mLog Load (0.1ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------------
+LogTest: test_invalid_without_loan_amount
+-----------------------------------------
+  [1m[36mLog Load (0.1ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------
+LogTest: test_invalid_without_currency
+--------------------------------------
+  [1m[36mLog Load (0.1ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------
+LogTest: test_invalid_without_name
+----------------------------------
+  [1m[36mLog Load (0.1ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------------
+LogTest: test_invalid_without_telephone
+---------------------------------------
+  [1m[36mLog Load (0.1ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------
+LogTest: test_invalid_without_loan_purpose
+------------------------------------------
+  [1m[36mLog Load (0.2ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------
+LogTest: test_invalid_without_verdict
+-------------------------------------
+  [1m[36mLog Load (0.1ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------------------------------------------------
+AnalyzerTest: test_check_that_the_decision_tree_hits_the_standard_of_>65%_accuracy
+----------------------------------------------------------------------------------
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "logs"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "logs" ("name", "phone", "currency", "loan_duration_months", "loan_purpose", "loan_amount", "verdict", "created_at", "updated_at", "id") VALUES ('Kirill Kozlov', '(123) 222 - 2222', 'CAD', 55, 'New car', 1000.0, 1, '2018-01-17 01:05:12.736556', '2018-01-17 01:05:12.736556', 201799169)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "logs" ("name", "phone", "currency", "loan_duration_months", "loan_purpose", "loan_amount", "verdict", "created_at", "updated_at", "id") VALUES ('Kirill Kozlov', '(123) 222 - 2222', 'USD', 55, 'New car', 1000.0, 1, '2018-01-17 01:05:12.736556', '2018-01-17 01:05:12.736556', 959946084)[0m
+  [1m[35m (79.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.7ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------------------
+StatsHelperTest: test_#sum_of_loans_returns_the_correct_string
+--------------------------------------------------------------
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT SUM("logs"."loan_amount") FROM "logs" WHERE "logs"."currency" = ? AND "logs"."verdict" = ?[0m  [["currency", "USD"], ["verdict", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT SUM("logs"."loan_amount") FROM "logs" WHERE "logs"."currency" = ? AND "logs"."verdict" = ?[0m  [["currency", "CAD"], ["verdict", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT SUM("logs"."loan_amount") FROM "logs" WHERE "logs"."currency" = ? AND "logs"."verdict" = ?[0m  [["currency", "EUR"], ["verdict", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT SUM("logs"."loan_amount") FROM "logs" WHERE "logs"."currency" = ? AND "logs"."verdict" = ?[0m  [["currency", "GBP"], ["verdict", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT SUM("logs"."loan_amount") FROM "logs" WHERE "logs"."currency" = ? AND "logs"."verdict" = ?[0m  [["currency", "JPY"], ["verdict", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------------------------------------------------
+AnalyzerTest: test_check_that_the_decision_tree_hits_the_standard_of_>65%_accuracy
+----------------------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------------------------------
+ProfileTest: test_invalid_without_a_properly_formatted_telephone
+----------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------------------------------------
+ProfileTest: test_#testing_array_returns_a_complete_array_of_valid_length
+-------------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------
+ProfileTest: test_profile_log
+-----------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------
+ProfileTest: test_invalid_without_name
+--------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------
+LogTest: test_invalid_without_name
+----------------------------------
+  [1m[36mLog Load (0.2ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------
+LogTest: test_invalid_without_verdict
+-------------------------------------
+  [1m[36mLog Load (0.1ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-----------------------
+LogTest: test_valid_log
+-----------------------
+  [1m[36mLog Load (0.2ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------
+LogTest: test_invalid_without_currency
+--------------------------------------
+  [1m[36mLog Load (0.1ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------
+LogTest: test_invalid_without_loan_duration_months
+--------------------------------------------------
+  [1m[36mLog Load (0.1ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------------
+LogTest: test_invalid_without_loan_amount
+-----------------------------------------
+  [1m[36mLog Load (0.2ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------
+LogTest: test_invalid_without_loan_purpose
+------------------------------------------
+  [1m[36mLog Load (0.1ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------------
+LogTest: test_invalid_without_telephone
+---------------------------------------
+  [1m[36mLog Load (0.1ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------------------------
+ConstructTreeWorkerTest: test_ConstructTreeWorker_is_queued_properly
+--------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (1.0ms)[0m  [1m[31mDELETE FROM "logs"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "logs" ("name", "phone", "currency", "loan_duration_months", "loan_purpose", "loan_amount", "verdict", "created_at", "updated_at", "id") VALUES ('Kirill Kozlov', '(123) 222 - 2222', 'CAD', 55, 'New car', 1000.0, 1, '2018-01-17 01:10:32.138045', '2018-01-17 01:10:32.138045', 201799169)[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "logs" ("name", "phone", "currency", "loan_duration_months", "loan_purpose", "loan_amount", "verdict", "created_at", "updated_at", "id") VALUES ('Kirill Kozlov', '(123) 222 - 2222', 'USD', 55, 'New car', 1000.0, 1, '2018-01-17 01:10:32.138045', '2018-01-17 01:10:32.138045', 959946084)[0m
+  [1m[35m (55.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------------------------------
+ProfileTest: test_invalid_without_a_properly_formatted_telephone
+----------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------------------------------------
+ProfileTest: test_#testing_array_returns_a_complete_array_of_valid_length
+-------------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------
+ProfileTest: test_invalid_without_name
+--------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------
+ProfileTest: test_profile_log
+-----------------------------
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------------------
+StatsHelperTest: test_#sum_of_loans_returns_the_correct_string
+--------------------------------------------------------------
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT SUM("logs"."loan_amount") FROM "logs" WHERE "logs"."currency" = ? AND "logs"."verdict" = ?[0m  [["currency", "USD"], ["verdict", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT SUM("logs"."loan_amount") FROM "logs" WHERE "logs"."currency" = ? AND "logs"."verdict" = ?[0m  [["currency", "CAD"], ["verdict", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT SUM("logs"."loan_amount") FROM "logs" WHERE "logs"."currency" = ? AND "logs"."verdict" = ?[0m  [["currency", "EUR"], ["verdict", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT SUM("logs"."loan_amount") FROM "logs" WHERE "logs"."currency" = ? AND "logs"."verdict" = ?[0m  [["currency", "GBP"], ["verdict", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT SUM("logs"."loan_amount") FROM "logs" WHERE "logs"."currency" = ? AND "logs"."verdict" = ?[0m  [["currency", "JPY"], ["verdict", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------
+LogTest: test_invalid_without_name
+----------------------------------
+  [1m[36mLog Load (0.2ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------------
+LogTest: test_invalid_without_telephone
+---------------------------------------
+  [1m[36mLog Load (0.1ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------
+LogTest: test_invalid_without_loan_duration_months
+--------------------------------------------------
+  [1m[36mLog Load (0.1ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------------
+LogTest: test_invalid_without_loan_amount
+-----------------------------------------
+  [1m[36mLog Load (0.1ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------
+LogTest: test_invalid_without_loan_purpose
+------------------------------------------
+  [1m[36mLog Load (0.1ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-----------------------
+LogTest: test_valid_log
+-----------------------
+  [1m[36mLog Load (0.1ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------
+LogTest: test_invalid_without_currency
+--------------------------------------
+  [1m[36mLog Load (0.2ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------
+LogTest: test_invalid_without_verdict
+-------------------------------------
+  [1m[36mLog Load (0.3ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------------------------
+ConstructTreeWorkerTest: test_ConstructTreeWorker_is_queued_properly
+--------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------------------------------------------------------
+CurrencyTest: test_#converted_value_returns_a_valid_conversion_with_exchange_rate_1
+-----------------------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------------------------------------------------
+AnalyzerTest: test_check_that_the_decision_tree_hits_the_standard_of_>65%_accuracy
+----------------------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.2ms)[0m  [1m[31mDELETE FROM "logs"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "logs" ("name", "phone", "currency", "loan_duration_months", "loan_purpose", "loan_amount", "verdict", "created_at", "updated_at", "id") VALUES ('Kirill Kozlov', '(123) 222 - 2222', 'CAD', 55, 'New car', 1000.0, 1, '2018-01-17 01:10:46.919633', '2018-01-17 01:10:46.919633', 201799169)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "logs" ("name", "phone", "currency", "loan_duration_months", "loan_purpose", "loan_amount", "verdict", "created_at", "updated_at", "id") VALUES ('Kirill Kozlov', '(123) 222 - 2222', 'USD', 55, 'New car', 1000.0, 1, '2018-01-17 01:10:46.919633', '2018-01-17 01:10:46.919633', 959946084)[0m
+  [1m[35m (52.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------------------------------------------------------
+CurrencyTest: test_#converted_value_returns_a_valid_conversion_with_exchange_rate_1
+-----------------------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------------------
+StatsHelperTest: test_#sum_of_loans_returns_the_correct_string
+--------------------------------------------------------------
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT SUM("logs"."loan_amount") FROM "logs" WHERE "logs"."currency" = ? AND "logs"."verdict" = ?[0m  [["currency", "USD"], ["verdict", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT SUM("logs"."loan_amount") FROM "logs" WHERE "logs"."currency" = ? AND "logs"."verdict" = ?[0m  [["currency", "CAD"], ["verdict", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT SUM("logs"."loan_amount") FROM "logs" WHERE "logs"."currency" = ? AND "logs"."verdict" = ?[0m  [["currency", "EUR"], ["verdict", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT SUM("logs"."loan_amount") FROM "logs" WHERE "logs"."currency" = ? AND "logs"."verdict" = ?[0m  [["currency", "GBP"], ["verdict", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT SUM("logs"."loan_amount") FROM "logs" WHERE "logs"."currency" = ? AND "logs"."verdict" = ?[0m  [["currency", "JPY"], ["verdict", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------
+LogTest: test_invalid_without_currency
+--------------------------------------
+  [1m[36mLog Load (0.3ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------
+LogTest: test_invalid_without_name
+----------------------------------
+  [1m[36mLog Load (0.1ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------------
+LogTest: test_invalid_without_loan_amount
+-----------------------------------------
+  [1m[36mLog Load (0.2ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------
+LogTest: test_invalid_without_loan_purpose
+------------------------------------------
+  [1m[36mLog Load (0.1ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------------
+LogTest: test_invalid_without_telephone
+---------------------------------------
+  [1m[36mLog Load (0.1ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------
+LogTest: test_invalid_without_loan_duration_months
+--------------------------------------------------
+  [1m[36mLog Load (0.2ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------
+LogTest: test_invalid_without_verdict
+-------------------------------------
+  [1m[36mLog Load (0.1ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+-----------------------
+LogTest: test_valid_log
+-----------------------
+  [1m[36mLog Load (0.1ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------
+ProfileTest: test_invalid_without_name
+--------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------
+ProfileTest: test_profile_log
+-----------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------------------------------------
+ProfileTest: test_#testing_array_returns_a_complete_array_of_valid_length
+-------------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------------------------------
+ProfileTest: test_invalid_without_a_properly_formatted_telephone
+----------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------------------------
+ConstructTreeWorkerTest: test_ConstructTreeWorker_is_queued_properly
+--------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------------------------------------------------
+AnalyzerTest: test_check_that_the_decision_tree_hits_the_standard_of_>65%_accuracy
+----------------------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.2ms)[0m  [1m[31mDELETE FROM "logs"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "logs" ("name", "phone", "currency", "loan_duration_months", "loan_purpose", "loan_amount", "verdict", "created_at", "updated_at", "id") VALUES ('Kirill Kozlov', '(123) 222 - 2222', 'CAD', 55, 'New car', 1000.0, 1, '2018-01-17 01:12:09.407998', '2018-01-17 01:12:09.407998', 201799169)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "logs" ("name", "phone", "currency", "loan_duration_months", "loan_purpose", "loan_amount", "verdict", "created_at", "updated_at", "id") VALUES ('Kirill Kozlov', '(123) 222 - 2222', 'USD', 55, 'New car', 1000.0, 1, '2018-01-17 01:12:09.407998', '2018-01-17 01:12:09.407998', 959946084)[0m
+  [1m[35m (56.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------------------------------
+ProfileTest: test_invalid_without_a_properly_formatted_telephone
+----------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------
+ProfileTest: test_invalid_without_name
+--------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------
+ProfileTest: test_profile_log
+-----------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------------------------------------
+ProfileTest: test_#testing_array_returns_a_complete_array_of_valid_length
+-------------------------------------------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------------------------------------------------------
+CurrencyTest: test_#converted_value_returns_a_valid_conversion_with_exchange_rate_1
+-----------------------------------------------------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------------------------------------------------
+AnalyzerTest: test_check_that_the_decision_tree_hits_the_standard_of_>65%_accuracy
+----------------------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------------------
+StatsHelperTest: test_#sum_of_loans_returns_the_correct_string
+--------------------------------------------------------------
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT SUM("logs"."loan_amount") FROM "logs" WHERE "logs"."currency" = ? AND "logs"."verdict" = ?[0m  [["currency", "USD"], ["verdict", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT SUM("logs"."loan_amount") FROM "logs" WHERE "logs"."currency" = ? AND "logs"."verdict" = ?[0m  [["currency", "CAD"], ["verdict", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT SUM("logs"."loan_amount") FROM "logs" WHERE "logs"."currency" = ? AND "logs"."verdict" = ?[0m  [["currency", "EUR"], ["verdict", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT SUM("logs"."loan_amount") FROM "logs" WHERE "logs"."currency" = ? AND "logs"."verdict" = ?[0m  [["currency", "GBP"], ["verdict", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT SUM("logs"."loan_amount") FROM "logs" WHERE "logs"."currency" = ? AND "logs"."verdict" = ?[0m  [["currency", "JPY"], ["verdict", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------------------------
+ConstructTreeWorkerTest: test_ConstructTreeWorker_is_queued_properly
+--------------------------------------------------------------------
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------
+LogTest: test_invalid_without_loan_purpose
+------------------------------------------
+  [1m[36mLog Load (0.2ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------
+LogTest: test_invalid_without_loan_duration_months
+--------------------------------------------------
+  [1m[36mLog Load (0.1ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------------
+LogTest: test_invalid_without_loan_amount
+-----------------------------------------
+  [1m[36mLog Load (0.1ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-----------------------
+LogTest: test_valid_log
+-----------------------
+  [1m[36mLog Load (0.2ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------
+LogTest: test_invalid_without_currency
+--------------------------------------
+  [1m[36mLog Load (0.2ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------
+LogTest: test_invalid_without_name
+----------------------------------
+  [1m[36mLog Load (0.1ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------------
+LogTest: test_invalid_without_telephone
+---------------------------------------
+  [1m[36mLog Load (0.1ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------
+LogTest: test_invalid_without_verdict
+-------------------------------------
+  [1m[36mLog Load (0.1ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.2ms)[0m  [1m[31mDELETE FROM "logs"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "logs" ("name", "phone", "currency", "loan_duration_months", "loan_purpose", "loan_amount", "verdict", "created_at", "updated_at", "id") VALUES ('Kirill Kozlov', '(123) 222 - 2222', 'CAD', 55, 'New car', 1000.0, 1, '2018-01-17 01:16:28.134986', '2018-01-17 01:16:28.134986', 201799169)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "logs" ("name", "phone", "currency", "loan_duration_months", "loan_purpose", "loan_amount", "verdict", "created_at", "updated_at", "id") VALUES ('Kirill Kozlov', '(123) 222 - 2222', 'USD', 55, 'New car', 1000.0, 1, '2018-01-17 01:16:28.134986', '2018-01-17 01:16:28.134986', 959946084)[0m
+  [1m[35m (77.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------------------------
+ConstructTreeWorkerTest: test_ConstructTreeWorker_is_queued_properly
+--------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------------------
+StatsHelperTest: test_#sum_of_loans_returns_the_correct_string
+--------------------------------------------------------------
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT SUM("logs"."loan_amount") FROM "logs" WHERE "logs"."currency" = ? AND "logs"."verdict" = ?[0m  [["currency", "USD"], ["verdict", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT SUM("logs"."loan_amount") FROM "logs" WHERE "logs"."currency" = ? AND "logs"."verdict" = ?[0m  [["currency", "CAD"], ["verdict", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT SUM("logs"."loan_amount") FROM "logs" WHERE "logs"."currency" = ? AND "logs"."verdict" = ?[0m  [["currency", "EUR"], ["verdict", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT SUM("logs"."loan_amount") FROM "logs" WHERE "logs"."currency" = ? AND "logs"."verdict" = ?[0m  [["currency", "GBP"], ["verdict", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT SUM("logs"."loan_amount") FROM "logs" WHERE "logs"."currency" = ? AND "logs"."verdict" = ?[0m  [["currency", "JPY"], ["verdict", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------------------------------------
+ProfileTest: test_#testing_array_returns_a_complete_array_of_valid_length
+-------------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------
+ProfileTest: test_profile_log
+-----------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------------------------------------
+ProfileTest: test_#max_condition?_returns_true_when_a_loan_meets_the_condition
+------------------------------------------------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------
+ProfileTest: test_invalid_without_name
+--------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------------------------------
+ProfileTest: test_invalid_without_a_properly_formatted_telephone
+----------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------
+LogTest: test_invalid_without_currency
+--------------------------------------
+  [1m[36mLog Load (0.5ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------
+LogTest: test_invalid_without_loan_duration_months
+--------------------------------------------------
+  [1m[36mLog Load (0.1ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------
+LogTest: test_invalid_without_verdict
+-------------------------------------
+  [1m[36mLog Load (0.1ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-----------------------
+LogTest: test_valid_log
+-----------------------
+  [1m[36mLog Load (0.1ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------------
+LogTest: test_invalid_without_loan_amount
+-----------------------------------------
+  [1m[36mLog Load (0.1ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------------
+LogTest: test_invalid_without_telephone
+---------------------------------------
+  [1m[36mLog Load (0.2ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------
+LogTest: test_invalid_without_loan_purpose
+------------------------------------------
+  [1m[36mLog Load (0.1ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------
+LogTest: test_invalid_without_name
+----------------------------------
+  [1m[36mLog Load (0.1ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------------------------------------------------------
+CurrencyTest: test_#converted_value_returns_a_valid_conversion_with_exchange_rate_1
+-----------------------------------------------------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------------------------------------------------
+AnalyzerTest: test_check_that_the_decision_tree_hits_the_standard_of_>65%_accuracy
+----------------------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (1.2ms)[0m  [1m[31mDELETE FROM "logs"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "logs" ("name", "phone", "currency", "loan_duration_months", "loan_purpose", "loan_amount", "verdict", "created_at", "updated_at", "id") VALUES ('Kirill Kozlov', '(123) 222 - 2222', 'CAD', 55, 'New car', 1000.0, 1, '2018-01-17 01:18:55.481586', '2018-01-17 01:18:55.481586', 201799169)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "logs" ("name", "phone", "currency", "loan_duration_months", "loan_purpose", "loan_amount", "verdict", "created_at", "updated_at", "id") VALUES ('Kirill Kozlov', '(123) 222 - 2222', 'USD', 55, 'New car', 1000.0, 1, '2018-01-17 01:18:55.481586', '2018-01-17 01:18:55.481586', 959946084)[0m
+  [1m[35m (59.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------------------
+StatsHelperTest: test_#sum_of_loans_returns_the_correct_string
+--------------------------------------------------------------
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT SUM("logs"."loan_amount") FROM "logs" WHERE "logs"."currency" = ? AND "logs"."verdict" = ?[0m  [["currency", "USD"], ["verdict", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT SUM("logs"."loan_amount") FROM "logs" WHERE "logs"."currency" = ? AND "logs"."verdict" = ?[0m  [["currency", "CAD"], ["verdict", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT SUM("logs"."loan_amount") FROM "logs" WHERE "logs"."currency" = ? AND "logs"."verdict" = ?[0m  [["currency", "EUR"], ["verdict", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT SUM("logs"."loan_amount") FROM "logs" WHERE "logs"."currency" = ? AND "logs"."verdict" = ?[0m  [["currency", "GBP"], ["verdict", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT SUM("logs"."loan_amount") FROM "logs" WHERE "logs"."currency" = ? AND "logs"."verdict" = ?[0m  [["currency", "JPY"], ["verdict", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------------------------------------------------
+AnalyzerTest: test_check_that_the_decision_tree_hits_the_standard_of_>65%_accuracy
+----------------------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------------------------------------------------------
+CurrencyTest: test_#converted_value_returns_a_valid_conversion_with_exchange_rate_1
+-----------------------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------------------------------------
+ProfileTest: test_#max_condition?_returns_true_when_a_loan_meets_the_condition
+------------------------------------------------------------------------------
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------------------------------------
+ProfileTest: test_#testing_array_returns_a_complete_array_of_valid_length
+-------------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------------------------------
+ProfileTest: test_invalid_without_a_properly_formatted_telephone
+----------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------------------------
+ProfileTest: test_#convert_to_int_correctly_foreign_worker
+----------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------
+ProfileTest: test_invalid_without_name
+--------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------
+ProfileTest: test_profile_log
+-----------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------------------------
+ConstructTreeWorkerTest: test_ConstructTreeWorker_is_queued_properly
+--------------------------------------------------------------------
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------
+LogTest: test_invalid_without_name
+----------------------------------
+  [1m[36mLog Load (0.3ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------
+LogTest: test_invalid_without_verdict
+-------------------------------------
+  [1m[36mLog Load (0.2ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------------
+LogTest: test_invalid_without_telephone
+---------------------------------------
+  [1m[36mLog Load (0.2ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-----------------------
+LogTest: test_valid_log
+-----------------------
+  [1m[36mLog Load (0.1ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------------
+LogTest: test_invalid_without_loan_amount
+-----------------------------------------
+  [1m[36mLog Load (0.1ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------
+LogTest: test_invalid_without_loan_duration_months
+--------------------------------------------------
+  [1m[36mLog Load (0.2ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------
+LogTest: test_invalid_without_loan_purpose
+------------------------------------------
+  [1m[36mLog Load (0.2ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------
+LogTest: test_invalid_without_currency
+--------------------------------------
+  [1m[36mLog Load (0.3ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "logs"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "logs" ("name", "phone", "currency", "loan_duration_months", "loan_purpose", "loan_amount", "verdict", "created_at", "updated_at", "id") VALUES ('Kirill Kozlov', '(123) 222 - 2222', 'CAD', 55, 'New car', 1000.0, 1, '2018-01-17 01:19:58.982013', '2018-01-17 01:19:58.982013', 201799169)[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "logs" ("name", "phone", "currency", "loan_duration_months", "loan_purpose", "loan_amount", "verdict", "created_at", "updated_at", "id") VALUES ('Kirill Kozlov', '(123) 222 - 2222', 'USD', 55, 'New car', 1000.0, 1, '2018-01-17 01:19:58.982013', '2018-01-17 01:19:58.982013', 959946084)[0m
+  [1m[35m (78.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------------------------------------------------
+AnalyzerTest: test_check_that_the_decision_tree_hits_the_standard_of_>65%_accuracy
+----------------------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------
+LogTest: test_invalid_without_name
+----------------------------------
+  [1m[36mLog Load (0.2ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------
+LogTest: test_invalid_without_currency
+--------------------------------------
+  [1m[36mLog Load (0.1ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------------
+LogTest: test_invalid_without_loan_amount
+-----------------------------------------
+  [1m[36mLog Load (0.1ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------
+LogTest: test_invalid_without_loan_duration_months
+--------------------------------------------------
+  [1m[36mLog Load (0.2ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------
+LogTest: test_invalid_without_loan_purpose
+------------------------------------------
+  [1m[36mLog Load (0.1ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------------
+LogTest: test_invalid_without_telephone
+---------------------------------------
+  [1m[36mLog Load (0.1ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------
+LogTest: test_invalid_without_verdict
+-------------------------------------
+  [1m[36mLog Load (0.1ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-----------------------
+LogTest: test_valid_log
+-----------------------
+  [1m[36mLog Load (0.1ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------------------------------------
+ProfileTest: test_#testing_array_returns_a_complete_array_of_valid_length
+-------------------------------------------------------------------------
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------
+ProfileTest: test_profile_log
+-----------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------------------------
+ProfileTest: test_#convert_to_int_correctly_foreign_worker
+----------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------------------------------------
+ProfileTest: test_#max_condition?_returns_true_when_a_loan_meets_the_condition
+------------------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------
+ProfileTest: test_invalid_without_name
+--------------------------------------
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------------------------------
+ProfileTest: test_invalid_without_a_properly_formatted_telephone
+----------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------------------------------------------------------
+CurrencyTest: test_#converted_value_returns_a_valid_conversion_with_exchange_rate_1
+-----------------------------------------------------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------------------------
+ConstructTreeWorkerTest: test_ConstructTreeWorker_is_queued_properly
+--------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------------------
+StatsHelperTest: test_#sum_of_loans_returns_the_correct_string
+--------------------------------------------------------------
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT SUM("logs"."loan_amount") FROM "logs" WHERE "logs"."currency" = ? AND "logs"."verdict" = ?[0m  [["currency", "USD"], ["verdict", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT SUM("logs"."loan_amount") FROM "logs" WHERE "logs"."currency" = ? AND "logs"."verdict" = ?[0m  [["currency", "CAD"], ["verdict", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT SUM("logs"."loan_amount") FROM "logs" WHERE "logs"."currency" = ? AND "logs"."verdict" = ?[0m  [["currency", "EUR"], ["verdict", 1]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT SUM("logs"."loan_amount") FROM "logs" WHERE "logs"."currency" = ? AND "logs"."verdict" = ?[0m  [["currency", "GBP"], ["verdict", 1]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT SUM("logs"."loan_amount") FROM "logs" WHERE "logs"."currency" = ? AND "logs"."verdict" = ?[0m  [["currency", "JPY"], ["verdict", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.2ms)[0m  [1m[31mDELETE FROM "logs"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "logs" ("name", "phone", "currency", "loan_duration_months", "loan_purpose", "loan_amount", "verdict", "created_at", "updated_at", "id") VALUES ('Kirill Kozlov', '(123) 222 - 2222', 'CAD', 55, 'New car', 1000.0, 1, '2018-01-17 01:21:21.143814', '2018-01-17 01:21:21.143814', 201799169)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "logs" ("name", "phone", "currency", "loan_duration_months", "loan_purpose", "loan_amount", "verdict", "created_at", "updated_at", "id") VALUES ('Kirill Kozlov', '(123) 222 - 2222', 'USD', 55, 'New car', 1000.0, 1, '2018-01-17 01:21:21.143814', '2018-01-17 01:21:21.143814', 959946084)[0m
+  [1m[35m (68.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------------------------------------------------
+AnalyzerTest: test_check_that_the_decision_tree_hits_the_standard_of_>65%_accuracy
+----------------------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------------------------------
+ProfileTest: test_invalid_without_a_properly_formatted_telephone
+----------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------------------------------------
+ProfileTest: test_#testing_array_returns_a_complete_array_of_valid_length
+-------------------------------------------------------------------------
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------
+ProfileTest: test_invalid_without_name
+--------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------------------------
+ProfileTest: test_#convert_to_int_correctly_foreign_worker
+----------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------------------------------------
+ProfileTest: test_#max_condition?_returns_true_when_a_loan_meets_the_condition
+------------------------------------------------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------
+ProfileTest: test_profile_log
+-----------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------
+LogTest: test_invalid_without_loan_duration_months
+--------------------------------------------------
+  [1m[36mLog Load (0.6ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------
+LogTest: test_invalid_without_name
+----------------------------------
+  [1m[36mLog Load (0.1ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------------
+LogTest: test_invalid_without_telephone
+---------------------------------------
+  [1m[36mLog Load (0.1ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------------
+LogTest: test_invalid_without_loan_amount
+-----------------------------------------
+  [1m[36mLog Load (0.2ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------
+LogTest: test_invalid_without_currency
+--------------------------------------
+  [1m[36mLog Load (0.2ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------
+LogTest: test_invalid_without_loan_purpose
+------------------------------------------
+  [1m[36mLog Load (0.2ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-----------------------
+LogTest: test_valid_log
+-----------------------
+  [1m[36mLog Load (0.2ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------
+LogTest: test_invalid_without_verdict
+-------------------------------------
+  [1m[36mLog Load (0.1ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------------------------------------------------------
+CurrencyTest: test_#converted_value_returns_a_valid_conversion_with_exchange_rate_1
+-----------------------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------------------
+StatsHelperTest: test_#sum_of_loans_returns_the_correct_string
+--------------------------------------------------------------
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT SUM("logs"."loan_amount") FROM "logs" WHERE "logs"."currency" = ? AND "logs"."verdict" = ?[0m  [["currency", "USD"], ["verdict", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT SUM("logs"."loan_amount") FROM "logs" WHERE "logs"."currency" = ? AND "logs"."verdict" = ?[0m  [["currency", "CAD"], ["verdict", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT SUM("logs"."loan_amount") FROM "logs" WHERE "logs"."currency" = ? AND "logs"."verdict" = ?[0m  [["currency", "EUR"], ["verdict", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT SUM("logs"."loan_amount") FROM "logs" WHERE "logs"."currency" = ? AND "logs"."verdict" = ?[0m  [["currency", "GBP"], ["verdict", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT SUM("logs"."loan_amount") FROM "logs" WHERE "logs"."currency" = ? AND "logs"."verdict" = ?[0m  [["currency", "JPY"], ["verdict", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------------------------
+ConstructTreeWorkerTest: test_ConstructTreeWorker_is_queued_properly
+--------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "logs"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "logs" ("name", "phone", "currency", "loan_duration_months", "loan_purpose", "loan_amount", "verdict", "created_at", "updated_at", "id") VALUES ('Kirill Kozlov', '(123) 222 - 2222', 'CAD', 55, 'New car', 1000.0, 1, '2018-01-17 01:26:58.917102', '2018-01-17 01:26:58.917102', 201799169)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "logs" ("name", "phone", "currency", "loan_duration_months", "loan_purpose", "loan_amount", "verdict", "created_at", "updated_at", "id") VALUES ('Kirill Kozlov', '(123) 222 - 2222', 'USD', 55, 'New car', 1000.0, 1, '2018-01-17 01:26:58.917102', '2018-01-17 01:26:58.917102', 959946084)[0m
+  [1m[35m (81.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------------------------
+ProfileTest: test_#testing_array_correctly_converts_foreign_worker
+------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------
+ProfileTest: test_invalid_without_name
+--------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------------------------------------
+ProfileTest: test_#max_condition?_returns_true_when_a_loan_meets_the_condition
+------------------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------
+ProfileTest: test_profile_log
+-----------------------------
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------------------------------------
+ProfileTest: test_#testing_array_returns_a_complete_array_of_valid_length
+-------------------------------------------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------------------------------
+ProfileTest: test_invalid_without_a_properly_formatted_telephone
+----------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------------------------
+ConstructTreeWorkerTest: test_ConstructTreeWorker_is_queued_properly
+--------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------------------------------------------------
+AnalyzerTest: test_check_that_the_decision_tree_hits_the_standard_of_>65%_accuracy
+----------------------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------
+LogTest: test_invalid_without_currency
+--------------------------------------
+  [1m[36mLog Load (0.3ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------
+LogTest: test_invalid_without_loan_duration_months
+--------------------------------------------------
+  [1m[36mLog Load (0.1ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------------
+LogTest: test_invalid_without_telephone
+---------------------------------------
+  [1m[36mLog Load (0.1ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-----------------------
+LogTest: test_valid_log
+-----------------------
+  [1m[36mLog Load (0.2ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------
+LogTest: test_invalid_without_loan_purpose
+------------------------------------------
+  [1m[36mLog Load (0.1ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------
+LogTest: test_invalid_without_name
+----------------------------------
+  [1m[36mLog Load (0.1ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------
+LogTest: test_invalid_without_verdict
+-------------------------------------
+  [1m[36mLog Load (0.1ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------------
+LogTest: test_invalid_without_loan_amount
+-----------------------------------------
+  [1m[36mLog Load (0.2ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------------------
+StatsHelperTest: test_#sum_of_loans_returns_the_correct_string
+--------------------------------------------------------------
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT SUM("logs"."loan_amount") FROM "logs" WHERE "logs"."currency" = ? AND "logs"."verdict" = ?[0m  [["currency", "USD"], ["verdict", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT SUM("logs"."loan_amount") FROM "logs" WHERE "logs"."currency" = ? AND "logs"."verdict" = ?[0m  [["currency", "CAD"], ["verdict", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT SUM("logs"."loan_amount") FROM "logs" WHERE "logs"."currency" = ? AND "logs"."verdict" = ?[0m  [["currency", "EUR"], ["verdict", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT SUM("logs"."loan_amount") FROM "logs" WHERE "logs"."currency" = ? AND "logs"."verdict" = ?[0m  [["currency", "GBP"], ["verdict", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT SUM("logs"."loan_amount") FROM "logs" WHERE "logs"."currency" = ? AND "logs"."verdict" = ?[0m  [["currency", "JPY"], ["verdict", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------------------------------------------------------
+CurrencyTest: test_#converted_value_returns_a_valid_conversion_with_exchange_rate_1
+-----------------------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.2ms)[0m  [1m[31mDELETE FROM "logs"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "logs" ("name", "phone", "currency", "loan_duration_months", "loan_purpose", "loan_amount", "verdict", "created_at", "updated_at", "id") VALUES ('Kirill Kozlov', '(123) 222 - 2222', 'CAD', 55, 'New car', 1000.0, 1, '2018-01-17 04:14:37.794831', '2018-01-17 04:14:37.794831', 201799169)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "logs" ("name", "phone", "currency", "loan_duration_months", "loan_purpose", "loan_amount", "verdict", "created_at", "updated_at", "id") VALUES ('Kirill Kozlov', '(123) 222 - 2222', 'USD', 55, 'New car', 1000.0, 1, '2018-01-17 04:14:37.794831', '2018-01-17 04:14:37.794831', 959946084)[0m
+  [1m[35m (56.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------------------
+StatsHelperTest: test_#sum_of_loans_returns_the_correct_string
+--------------------------------------------------------------
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT SUM("logs"."loan_amount") FROM "logs" WHERE "logs"."currency" = ? AND "logs"."verdict" = ?[0m  [["currency", "USD"], ["verdict", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT SUM("logs"."loan_amount") FROM "logs" WHERE "logs"."currency" = ? AND "logs"."verdict" = ?[0m  [["currency", "CAD"], ["verdict", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT SUM("logs"."loan_amount") FROM "logs" WHERE "logs"."currency" = ? AND "logs"."verdict" = ?[0m  [["currency", "EUR"], ["verdict", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT SUM("logs"."loan_amount") FROM "logs" WHERE "logs"."currency" = ? AND "logs"."verdict" = ?[0m  [["currency", "GBP"], ["verdict", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT SUM("logs"."loan_amount") FROM "logs" WHERE "logs"."currency" = ? AND "logs"."verdict" = ?[0m  [["currency", "JPY"], ["verdict", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------------------------------------
+ProfileTest: test_#max_condition?_returns_true_when_a_loan_meets_the_condition
+------------------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------------------------------------
+ProfileTest: test_#testing_array_returns_a_complete_array_of_valid_length
+-------------------------------------------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------------------------------
+ProfileTest: test_invalid_without_a_properly_formatted_telephone
+----------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------
+ProfileTest: test_invalid_without_name
+--------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------
+ProfileTest: test_profile_log
+-----------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------------------------
+ProfileTest: test_#testing_array_correctly_converts_foreign_worker
+------------------------------------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------------
+LogTest: test_invalid_without_loan_amount
+-----------------------------------------
+  [1m[36mLog Load (0.2ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------
+LogTest: test_invalid_without_loan_duration_months
+--------------------------------------------------
+  [1m[36mLog Load (0.1ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-----------------------
+LogTest: test_valid_log
+-----------------------
+  [1m[36mLog Load (0.2ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------------
+LogTest: test_invalid_without_telephone
+---------------------------------------
+  [1m[36mLog Load (0.2ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------
+LogTest: test_invalid_without_currency
+--------------------------------------
+  [1m[36mLog Load (0.1ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------
+LogTest: test_invalid_without_loan_purpose
+------------------------------------------
+  [1m[36mLog Load (0.1ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------
+LogTest: test_invalid_without_verdict
+-------------------------------------
+  [1m[36mLog Load (0.1ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------
+LogTest: test_invalid_without_name
+----------------------------------
+  [1m[36mLog Load (0.1ms)[0m  [1m[34mSELECT  "logs".* FROM "logs" WHERE "logs"."id" = ? LIMIT ?[0m  [["id", 201799169], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------------------------
+ConstructTreeWorkerTest: test_ConstructTreeWorker_is_queued_properly
+--------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------------------------------------------------
+AnalyzerTest: test_check_that_the_decision_tree_hits_the_standard_of_>65%_accuracy
+----------------------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------------------------------------------------------
+CurrencyTest: test_#converted_value_returns_a_valid_conversion_with_exchange_rate_1
+-----------------------------------------------------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
