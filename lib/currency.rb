@@ -32,7 +32,7 @@ class Currency
 
   def rate
     return 1 if Rails.env.test?
-    
+
     rates = Rails.cache.fetch("rates-#{@currency_iso}", expires_in: 12.hours) do
       fetch_rates(@currency_iso)
     end

@@ -55,9 +55,7 @@ class Analyzer
     test.each do |t|
       predict = dec_tree.predict(t)
 
-      if predict.first == t.last
-        correct+=1
-      end
+      correct += 1 if predict.first == t.last
     end
 
     (correct.to_f / test.length.to_f) > test_standard
