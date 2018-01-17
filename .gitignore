@@ -1,4 +1,5 @@
 .byebug_history
 /tmp/cache/assets/sprockets
 /log/development.log
+/log/test.log
 coverage
