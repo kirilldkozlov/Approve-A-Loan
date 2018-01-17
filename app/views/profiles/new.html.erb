@@ -4,9 +4,11 @@
     </div>
     <div class="col-md-8">
       <div class="jumbotron main_box">
-        <div class="custom-badge custom-badge-h1">
-          <h1 class="display-3">Approve-A-Loan</h1>
-        </div>
+        <%= link_to profiles_path do %>
+          <div class="custom-badge custom-badge-h1">
+            <h1 class="display-3">Approve-A-Loan</h1>
+          </div>
+        <% end %>
         <div class="form-margin-padding">
           <%= render 'errors', profile: @profile %>
           <h4>Please fill out this form to analyze a credit applicant</p>

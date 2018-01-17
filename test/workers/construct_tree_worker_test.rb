@@ -1,6 +1,18 @@
 require 'test_helper'
-class ConstructTreeWorkerTest < MiniTest::Unit::TestCase
-  def test_example
-    skip "add some examples to (or delete) #{__FILE__}"
+require 'sidekiq/testing'
+
+class ConstructTreeWorkerTest < ActiveSupport::TestCase
+  setup do
+    Sidekiq::Testing.fake!
+  end
+
+  teardown do
+    Sidekiq::Worker.drain_all
+  end
+
+  test 'ConstructTreeWorker is queued properly' do
+    assert_equal 0, ConstructTreeWorker.jobs.size
+    ConstructTreeWorker.perform_async
+    assert_equal 1, ConstructTreeWorker.jobs.size
   end
 end

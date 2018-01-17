@@ -8,5 +8,5 @@ class Log < ApplicationRecord
   validates :verdict, presence: true
 
   enum verdict: { approved: 1, denied: 2 }
-  enum status: [ :generated, :saved ]
+  enum status: %i[generated saved]
 end

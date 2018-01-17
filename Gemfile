@@ -7,9 +7,9 @@ end
 
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass', '~> 3.2.0'
-gem "font-awesome-rails"
 gem 'coffee-rails', '~> 4.2'
 gem 'decisiontree'
+gem 'font-awesome-rails'
 gem 'jbuilder', '~> 2.5'
 gem 'jquery-rails'
 gem 'puma', '~> 3.7'
@@ -23,7 +23,9 @@ gem 'uglifier', '>= 1.3.0'
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'capybara', '~> 2.13'
+  gem 'rails-controller-testing'
   gem 'selenium-webdriver'
+  gem 'simplecov', require: false, group: :test
 end
 
 group :development do

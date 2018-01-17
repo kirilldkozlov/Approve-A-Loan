@@ -4,9 +4,11 @@
     </div>
     <div class="col-md-8">
       <div class="jumbotron main_box">
-        <div class="custom-badge custom-badge-h1">
-          <h1 class="display-3">Approve-A-Loan</h1>
-        </div>
+        <%= link_to profiles_path do %>
+          <div class="custom-badge custom-badge-h1">
+            <h1 class="display-3">Approve-A-Loan</h1>
+          </div>
+        <% end %>
         <%= hidden_field_tag 'verdict', @log.verdict %>
         <%= hidden_field_tag 'confidence', @confidence %>
         <div class="custom-badge custom-badge-dark">
@@ -16,12 +18,17 @@
         <center>
           <div id="ring"></div>
         </center>
-        <div class="row" style="margin: 10px;">
-          <div class="col-sm-1">
-            <%= button_to "New", new_profile_path, method: :get, class: "btn btn-success", style: "width: 5em;" %>
+        <div style="margin: 10px;">
+          <div style="float:left; margin-right: 7px;">
+            <%= button_to "New", new_profile_path, method: :get, class: "btn btn-success" %>
           </div>
-          <div class="col-sm-1">
-            <%= button_to "Save", profiles_path, method: :get, params: { id: @log.id }, class: "btn btn-primary", style: "width: 5em;" %>
+          <div style="float:left; margin-right: 7px;">
+            <%= button_to "Save", save_profiles_path, method: :post, params: { id: @log.id }, class: "btn btn-primary" %>
+          </div>
+          <div style="float:left;">
+            <%= button_to "Back", profiles_path, method: :get, class: "btn btn-danger" %>
+          </div>
+          <div style="clear:both;">
           </div>
         </div>
       </div>
