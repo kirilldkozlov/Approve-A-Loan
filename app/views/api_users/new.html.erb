@@ -1,0 +1,24 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-2">
+    </div>
+    <div class="col-md-8">
+      <div class="jumbotron main_box">
+        <%= link_to profiles_path do %>
+          <div class="custom-badge custom-badge-h1">
+            <h1 class="display-3">Approve-A-Loan</h1>
+          </div>
+        <% end %>
+        <div class="form-margin-padding">
+          <%= render 'errors', object: @user %>
+          <h4>Please fill out this form to receive API access</p>
+          <%= form_for(@user) do |f| %>
+              <%= render 'form', f: f %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-2">
+    </div>
+  </div>
+</div>

@@ -1,0 +1,10 @@
+<% if object.errors.any? %>
+  <div class="custom-badge custom-badge-error">
+    <p><%= pluralize(object.errors.count, "error") %> prohibited the analysis:</p>
+    <ul>
+    <% object.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
