@@ -38,4 +38,4 @@ This end point is for searches and look ups of logs.
 - `curl -H "Authorization: INSERT_TOKEN_HERE" http://localhost:3000/logs/"Test%20Guy"``
 
 ## Application facts
-- Test coverage `> 90%`
+- Test coverage `> 92%`
