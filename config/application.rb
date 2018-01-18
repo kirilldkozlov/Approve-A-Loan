@@ -9,5 +9,7 @@ module App
     config.load_defaults 5.1
 
     config.eager_load_paths << Rails.root.join('lib')
+    config.middleware.use ActionDispatch::Flash
+    config.api_only = false
   end
 end
