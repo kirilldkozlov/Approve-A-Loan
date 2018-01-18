@@ -1,10 +1,6 @@
 class ApiUser < ApplicationRecord
   has_secure_password
 
-  # curl -H "Content-Type: application/json" -X POST -d '{"email":"email","password":"password"}' http://localhost:3000/authenticate
-  # curl -H "Authorization: token" http://localhost:3000/test
-  # eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3LCJleHAiOjE1MTYzMzMwOTR9.8xueN-uhLyQQ0EilZBmnZitzVUGnlwtw818QvXCnYyw
-
   validates :email, presence: true
   validates :expiry, presence: true
   validates_uniqueness_of :email, unless: :previous_has_expired
