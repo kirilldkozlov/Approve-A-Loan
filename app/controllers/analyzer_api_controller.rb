@@ -41,11 +41,13 @@ class AnalyzerApiController < ApplicationController
       '(name= ?) OR
       (name like ?) OR
       (name like ?) OR
+      (name like ?) OR
       (name like ?)',
       name,
       "%#{first_name}%",
       "%#{last_name}%",
-      "#{first_name[0..2]}%"
+      "#{first_name[0..2]}%",
+      "#{last_name[0..2]}%"
     )
   end
 end
