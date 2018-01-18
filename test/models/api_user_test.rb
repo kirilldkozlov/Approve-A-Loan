@@ -24,23 +24,23 @@ class ApiUserTest < ActiveSupport::TestCase
   test "doesn't allow a duplicate email" do
     dup_user = ApiUser.create(
       email: @api_user.email,
-      password: "test",
+      password: 'test',
       expiry: ApiUser::EXPIRY_DATES[1][1]
     )
 
     refute dup_user.valid?
   end
 
-  test "allows a duplicate if the other is expired" do
+  test 'allows a duplicate if the other is expired' do
     @api_user.expiry = 7.days.ago
     @api_user.save!
 
     dup_user = ApiUser.create(
       email: @api_user.email,
-      password: "test",
+      password: 'test',
       expiry: ApiUser::EXPIRY_DATES[1][1]
     )
-    
+
     assert dup_user.valid?
   end
 end

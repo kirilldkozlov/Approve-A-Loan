@@ -8,9 +8,9 @@ class ApplicationController < ActionController::Base
 
   def authenticate_request
     @current_user = if Rails.env.test?
-      ApiUser.create(email: "test@test.com", expiry: Time.zone.now + 1.day, password: 'password')
-    else
-      AuthorizeApiRequest.call(request.headers).result
+                      ApiUser.create(email: 'test@test.com', expiry: Time.zone.now + 1.day, password: 'password')
+                    else
+                      AuthorizeApiRequest.call(request.headers).result
     end
 
     render json: { error: 'Not Authorized' }, status: 401 unless @current_user

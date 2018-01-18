@@ -38,9 +38,9 @@ class AnalyzerApiController < ApplicationController
     first_name, last_name = name.split
 
     logs = if name
-      Log.saved.where(name: name) + first(first_name) + last(last_name)
-    else
-      []
+             Log.saved.where(name: name) + first(first_name) + last(last_name)
+           else
+             []
     end
   end
 
