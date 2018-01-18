@@ -1,8 +1,8 @@
-<% if profile.errors.any? %>
+<% if object.errors.any? %>
   <div class="custom-badge custom-badge-error">
-    <p><%= pluralize(profile.errors.count, "error") %> prohibited the analysis:</p>
+    <p><%= pluralize(object.errors.count, "error") %> prohibited the analysis:</p>
     <ul>
-    <% profile.errors.full_messages.each do |message| %>
+    <% object.errors.full_messages.each do |message| %>
       <li><%= message %></li>
     <% end %>
     </ul>

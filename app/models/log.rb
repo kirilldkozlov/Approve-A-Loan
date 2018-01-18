@@ -9,4 +9,6 @@ class Log < ApplicationRecord
 
   enum verdict: { approved: 1, denied: 2 }
   enum status: %i[generated saved]
+
+  scope :saved, -> { where(status: "saved") }
 end

@@ -10,7 +10,7 @@
           </div>
         <% end %>
         <div class="form-margin-padding">
-          <%= render 'errors', profile: @profile %>
+          <%= render 'errors', object: @profile %>
           <h4>Please fill out this form to analyze a credit applicant</p>
           <%= form_for(@profile) do |f| %>
               <%= render 'form', f: f %>
