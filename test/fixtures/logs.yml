@@ -17,3 +17,13 @@ valid_usd:
   loan_purpose: New car
   loan_amount: 1000
   verdict: 1
+
+saved:
+  name: Kirill Kozlov
+  phone: (123) 222 - 2222
+  currency: CAD
+  loan_duration_months: 55
+  loan_purpose: New car
+  loan_amount: 1000
+  verdict: 1
+  status: "saved"
