@@ -9,4 +9,8 @@ Rails.application.routes.draw do
       get :print
     end
   end
+
+  post 'authenticate', to: 'authentication#authenticate'
+
+  get 'test', to: 'analyzer_api#test'
 end

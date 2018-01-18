@@ -10,17 +10,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20_180_116_030_238) do
-  create_table 'logs', force: :cascade do |t|
-    t.string 'name'
-    t.string 'phone'
-    t.string 'currency'
-    t.integer 'loan_duration_months'
-    t.string 'loan_purpose'
-    t.float 'loan_amount'
-    t.integer 'verdict'
-    t.datetime 'created_at', null: false
-    t.datetime 'updated_at', null: false
-    t.integer 'status', default: 0
+ActiveRecord::Schema.define(version: 20180118001535) do
+
+  create_table "api_users", force: :cascade do |t|
+    t.string "user_name"
+    t.string "email"
+    t.string "password_digest"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
+
+  create_table "logs", force: :cascade do |t|
+    t.string "name"
+    t.string "phone"
+    t.string "currency"
+    t.integer "loan_duration_months"
+    t.string "loan_purpose"
+    t.float "loan_amount"
+    t.integer "verdict"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "status", default: 0
+  end
+
 end

@@ -2,6 +2,8 @@ require 'base64'
 require 'sidekiq/api'
 
 class ProfilesController < ApplicationController
+  skip_before_action :authenticate_request
+  
   def new
     ConstructTreeWorker.perform_async
     @profile = Profile.new
