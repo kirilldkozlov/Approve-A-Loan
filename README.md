@@ -14,5 +14,28 @@ The classifier used achieves a ~77% accuracy which is close to the expected accu
 3. Run `rails server`
 4. Go to `http://localhost:3000`
 
+## API
+
+Approve-A-Loan has an API to provide easier access to relevant logs for authenticated users. A scenario which would require such a feature could be for a business who wants to integrate their existing credit processsing workflow with Approve-A-Loan. The API uses the JWT Web Token protocol which is appropriate for a request per request API, as opposed to a session based API.
+
+The API has 3 end points. `test` which allows clients to test their authentication, `exact_log` which will take a name string as a param and return the last record matching that name and `logs` which will take a name string as a param and return any record which matches any of these conditions:
+- has the name
+- has the first name
+- has the last name
+- has the first 3 letters of the first name
+- has the first 3 letters of the last name
+
+This end point is for searches and look ups of logs.
+
+## Using the API
+
+1. Run `rails server`
+2. Insure you have registered an `ApiUser`
+3. Authenticate: `curl -H "Content-Type: application/json" -X POST -d '{"email":"email","password":"password"}' http://localhost:3000/authenticate`
+4. Run a query: 
+- `curl -H "Authorization: INSERT_TOKEN_HERE" http://localhost:3000/test`
+- `curl -H "Authorization: INSERT_TOKEN_HERE" http://localhost:3000/exact_log/"Test%20Guy"`
+- `curl -H "Authorization: INSERT_TOKEN_HERE" http://localhost:3000/logs/"Test%20Guy"``
+
 ## Application facts
 - Test coverage `> 90%`
