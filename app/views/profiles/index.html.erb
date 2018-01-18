@@ -59,9 +59,14 @@
               <b>Total money loaned out:</b> <%= StatsHelper.sum_of_loans %>
             </div>
           </center>
-          <div class="row" style="padding-left: 10px;">
-            <div class="col-sm-1">
-              <%= button_to "New", new_profile_path, method: :get, class: "btn btn-success", style: "width: 5em;" %>
+          <div style="margin: 10px;">
+            <div style="float:left; margin-right: 7px;">
+              <%= button_to "New", new_profile_path, method: :get, class: "btn btn-success" %>
+            </div>
+            <div style="float:left;">
+              <%= button_to "Register for API", new_api_user_path, method: :get, class: "btn btn-warning" %>
+            </div>
+            <div style="clear:both;">
             </div>
           </div>
       </div>
