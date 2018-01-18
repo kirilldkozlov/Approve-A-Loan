@@ -36,6 +36,8 @@ class AnalyzerApiController < ApplicationController
 
   def build_logs(name)
     first_name, last_name = name.split
+    first_name = first_name.nil? ? '/' : first_name
+    last_name = last_name.nil? ? '/' : last_name
 
     Log.saved.where(
       '(name= ?) OR
