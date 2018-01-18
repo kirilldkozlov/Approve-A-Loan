@@ -21,7 +21,7 @@ class AnalyzerApiController < ApplicationController
 
     if logs.empty?
       render json: {
-        error: "No records found for query with name: #{params[:name]}"
+        error: "No records found for query containing: #{params[:name]}"
       }
     else
       render json: logs
