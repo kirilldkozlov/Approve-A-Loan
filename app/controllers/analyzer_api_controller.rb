@@ -36,20 +36,29 @@ class AnalyzerApiController < ApplicationController
 
   def build_logs(name)
     first_name, last_name = name.split
-    first_name = first_name.nil? ? "#{SecureRandom.base64}" : first_name
-    last_name = last_name.nil? ? "#{SecureRandom.base64}" : last_name
 
-    Log.saved.where(
-      '(name= ?) OR
-      (name like ?) OR
-      (name like ?) OR
-      (name like ?) OR
-      (name like ?)',
-      name,
-      "%#{first_name}%",
-      "%#{last_name}%",
-      "#{first_name[0..2]}%",
-      "#{last_name[0..2]}%"
-    )
+    logs = if name
+      Log.saved.where(name: name) + first(first_name) + last(last_name)
+    else
+      []
+    end
+  end
+
+  def first(first_name)
+    if first_name
+      Log.saved.where('name like ?', "%#{first_name}%") +
+        Log.saved.where('name like ?', "#{first_name[0..2]}%")
+    else
+      []
+    end
+  end
+
+  def last(last_name)
+    if last_name
+      Log.saved.where('name like ?', "%#{last_name}%") +
+        Log.saved.where('name like ?', "#{last_name[0..2]}%")
+    else
+      []
+    end
   end
 end
