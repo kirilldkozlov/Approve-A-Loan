@@ -3,7 +3,7 @@ require 'sidekiq/api'
 
 class ProfilesController < ApplicationController
   skip_before_action :authenticate_request
-  
+
   def new
     ConstructTreeWorker.perform_async
     @profile = Profile.new
@@ -44,7 +44,9 @@ class ProfilesController < ApplicationController
 
   def save
     Log.find_by_id(params[:id].to_i)&.update_attributes!(status: 1)
-    redirect_to profiles_path
+    redirect_to profiles_path, flash: {
+      saved: "Analysis saved!"
+    }
   end
 
   def index

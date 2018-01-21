@@ -45,13 +45,13 @@
   <div class="row">
     <h2 style="margin-top: 0px">Employment information</h2>
     <br>
-    <div class="col-md-5">
+    <div class="col-md-4">
       <div class="form-group">
         <%= f.label :job_status %><br>
         <%= f.select :job_status, Profile::JOB_STATUS, {}, { class: "form-control" } %>
       </div>
     </div>
-    <div class="col-md-3">
+    <div class="col-md-4">
       <div class="form-group">
         <%= f.label :foreign_worker %><br>
         <%= f.check_box :foreign_worker, class: "form-check" %>
@@ -90,13 +90,13 @@
     </div>
   </div>
   <div class="row">
-    <div class="col-md-3">
+    <div class="col-md-6">
       <div class="form-group">
         <%= f.label :loan_duration_months %><br>
         <%= f.number_field :loan_duration_months, class: "form-control", style: 'width: 100px', required: true %>
       </div>
     </div>
-    <div class="col-md-4">
+    <div class="col-md-6">
       <div class="form-group">
         <%= f.label "Other debtors or guarantors" %><br>
         <%= f.select :other_debtors_guarantors, Profile::OTHER_DEBTORS_GUARANTORS, {}, { class: "form-control" } %>
