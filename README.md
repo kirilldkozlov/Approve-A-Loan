@@ -6,6 +6,9 @@ This application is inspired and based on the following course: https://onlineco
 
 The classifier used achieves a ~77% accuracy which is close to the expected accuracy determined above. The accuracy would increase dramatically with a larger dataset, currently it only processes 1000 records.
 
+## Highlights
+Asynchronous Sidekiq background processing, Built a REST API with JWT token authentication and MySQL search functions, Unit testing, Comprehensive validations and error catching, Web scraper to fetch currency rates, Encryption of data and parameters, MVC design pattern, OOD throughout the app, Javascript form enhancements, Bootstrap design
+
 ## Screenshots
 Please see Issue #17 'Screenshots'
 
