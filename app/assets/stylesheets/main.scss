@@ -1,5 +1,5 @@
-$page-background: #ECF8F8;
-$box-background: #C4DFE6;
+$page-background: #fcfcfc;
+$box-background: #e7edef;
 
 #ring {
   margin: 20px;
@@ -21,26 +21,26 @@ a:link {
 }
 
 a:visited, a:hover, a:active,  {
-    color: lighten(#002026, 20%);
+    color: lighten(#002026, 7%);
 }
 
 .main_box {
   background-color: $box-background;
 
-  padding: 25px 100px 25px 100px;
-  margin-top: 55px;
+  padding: 1px 100px 25px 100px;
+  margin-top: 0px;
   margin-bottom: 30px;
-  -moz-border-radius: 10px;
-  -webkit-border-radius: 10px;
-  border-radius: 10px;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
 }
 
 .table-format {
   margin: 10px;
   background-color: #fff;
-  -moz-border-radius: 7px;
-  -webkit-border-radius: 7px;
-  border-radius: 7px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
 }
 
 .progressbar__label {
@@ -54,17 +54,22 @@ a:visited, a:hover, a:active,  {
   padding-top: 10px;
 }
 
+.title {
+  font-weight: 600;
+}
+
 .custom-badge {
   padding: 12px 19px 12px 19px;
-  -moz-border-radius: 7px;
-  -webkit-border-radius: 7px;
-  border-radius: 7px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
   margin: 10px;
   width: 100%;
 }
 
 .custom-badge-h1 {
-  background-color: #ecf8f894;
+  background-color: #d5dbdd;
+  font-weight: 600;
 }
 
 .custom-badge-dark {
@@ -89,8 +94,10 @@ a:visited, a:hover, a:active,  {
 
 .verdict-success {
   background-color: #5cb85c;
+  border-radius: 4px;
 }
 
 .verdict-danger {
   background-color: #c0392b;
+  border-radius: 4px;
 }

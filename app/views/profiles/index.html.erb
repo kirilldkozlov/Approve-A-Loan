@@ -6,7 +6,7 @@
       <div class="jumbotron main_box">
         <%= link_to profiles_path do %>
           <div class="custom-badge custom-badge-h1">
-            <h1 class="display-3">Approve-A-Loan</h1>
+            <h1 class="title">Approve-A-Loan</h1>
           </div>
         <% end %>
 
@@ -49,7 +49,7 @@
                   </td>
                   <td>
                     <%= link_to print_profiles_path(id: log.id), method: :get, target: :_blank do %>
-                      <%= fa_icon 'print', class: "fa-lg", style: "color: #07575B;"%>
+                      <%= fa_icon 'print', class: "fa-lg", style: "color: #082829;"%>
                     <% end %>
                     <%= link_to delete_profiles_path(id: log.id), method: :post, data: { confirm: "Are you sure?" } do %>
                       <%= fa_icon 'trash', class: "fa-lg", style: "color: #c0392b;" %>
