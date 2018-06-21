@@ -10,7 +10,7 @@ The classifier used achieves a ~77% accuracy which is close to the expected accu
 Asynchronous Sidekiq background processing, Built a REST API with JWT token authentication and MySQL search functions, Unit testing, Comprehensive validations and error catching, Web scraper to fetch currency rates, Encryption of data and parameters, MVC design pattern, OOD throughout the app, Javascript form enhancements, Bootstrap design
 
 ## Screenshots
-Please see Issue #17 'Screenshots'
+Please see Issue #19 'Screenshots'
 
 ## Running the application
 
