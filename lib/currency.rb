@@ -41,6 +41,7 @@ class Currency
   end
 
   def fetch_rates(iso)
+    ## NEW API
     uri = URI::HTTP.build(
       host: SERVICE_HOST,
       path: SERVICE_PATH,
