@@ -17,7 +17,6 @@ Rails.application.routes.draw do
   get 'test', to: 'analyzer_api#test'
 
   controller :analyzer_api do
-    get 'logs/:name', to: 'analyzer_api#logs', as: 'logs'
-    get 'exact_log/:name', to: 'analyzer_api#exact_log', as: 'exact_log'
+    get 'logs', to: 'analyzer_api#logs', as: 'logs'
   end
 end

@@ -12,20 +12,6 @@ class AnalyzerApiControllerTest < ActionDispatch::IntegrationTest
     assert JSON.parse(response.body)['text']
   end
 
-  test '#exact_log returns a log' do
-    get exact_log_path(@log.name)
-    assert_response :success
-
-    assert_equal @log.name, JSON.parse(response.body)['name']
-  end
-
-  test '#exact_log returns an error if there is no match' do
-    get exact_log_path('Not a name')
-    assert_response :success
-
-    assert JSON.parse(response.body)['error']
-  end
-
   test '#logs returns an error if there is no matchs' do
     get logs_path('Not a name')
     assert_response :success
