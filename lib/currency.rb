@@ -3,8 +3,8 @@ require 'open-uri'
 class Currency
   attr_accessor :input_value, :currency_iso
 
-  SERVICE_HOST = 'finance.google.com'.freeze
-  SERVICE_PATH = '/finance/converter'.freeze
+  SERVICE_HOST = 'api.exchangeratesapi.io'.freeze
+  SERVICE_PATH = '/latest'.freeze
   USD_ISO = 'USD'.freeze
 
   USD_TO_DM_1993 = 1.66
@@ -41,22 +41,16 @@ class Currency
   end
 
   def fetch_rates(iso)
-    ## NEW API
     uri = URI::HTTP.build(
       host: SERVICE_HOST,
       path: SERVICE_PATH,
-      query: "a=1&from=#{iso}&to=#{USD_ISO}"
+      query: "base=#{iso}&symbols=#{USD_ISO}"
     )
 
     uri.read
   end
 
   def extract_rate(rates)
-    case rates
-    when %r{<span class=bld>(\d+\.?\d*) [A-Z]{3}<\/span>}
-      Regexp.last_match(1).to_f
-    else
-      raise StandardError, 'Rate Fetch Error'
-    end
+    eval(rates)[:rates][:USD]
   end
 end
