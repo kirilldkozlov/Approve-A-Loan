@@ -40,7 +40,6 @@ This end point is for searches and look ups of logs.
 3. Authenticate: `curl -H "Content-Type: application/json" -X POST -d '{"email":"email","password":"password"}' http://localhost:3000/authenticate`
 4. Run a query: 
 - `curl -H "Authorization: INSERT_TOKEN_HERE" http://localhost:3000/test`
-- `curl -H "Authorization: INSERT_TOKEN_HERE" http://localhost:3000/exact_log/"Test%20Guy"`
 - `curl -H "Authorization: INSERT_TOKEN_HERE" http://localhost:3000/logs/"Test%20Guy"`
 
 ## Application facts
