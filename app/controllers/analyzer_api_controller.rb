@@ -8,46 +8,8 @@ class AnalyzerApiController < ApplicationController
   POOL_SIZE = 10
 
   def analyze
-    queries = params[:profiles]
-    jobs = Queue.new
-    analyzer = Analyzer.new
-    logs = []
-
-    queries.each_with_index do |profile, index|
-      prof = Profile.new(profile_params(profile))
-      analysis = {id: index, process_date: Time.now, profile: prof}
-
-      if prof.valid?
-        jobs.push(analysis)
-      else
-        analysis[:verdict] = "Invalid request"
-        logs.push(analysis)
-      end
-    end
-
-    num_of_workers = [queries.length, POOL_SIZE].min
-    analyzers = (num_of_workers).times.map do
-      analyzer.dup
-    end
-
-    # Run each through Analyzer
-    workers = (num_of_workers).times.map do |worker|
-      Thread.new do
-        begin
-          while analysis = jobs.pop(true)
-            prediction = analyzers[worker].predict(analysis[:profile].testing_array)
-            analysis[:verdict] = prediction.first.to_i == 1 ? 'approved' : 'denied'
-            analysis[:confidence] = prediction.last
-            logs.push(analysis)
-          end
-        rescue ThreadError
-        end
-      end
-    end
-
-    workers.map(&:join)
-
-    logs = logs.sort_by { |log| log[:id].to_i }
+    data = { jobs: Queue.new, logs: [] }
+    logs = process_jobs(get_jobs(params[:profiles], data)).sort_by { |log| log[:id].to_i }
 
     if logs.empty?
       render json: {
@@ -108,5 +70,53 @@ class AnalyzerApiController < ApplicationController
            else
              []
     end
+  end
+
+  def get_jobs(queries, data)
+    queries.each_with_index do |profile, index|
+      prof = Profile.new(profile_params(profile))
+      analysis = {id: index, process_date: Time.now, profile: prof}
+
+      if prof.valid?
+        data[:jobs].push(analysis)
+      else
+        analysis[:verdict] = "Invalid request"
+        data[:logs].push(analysis)
+      end
+    end
+
+    data
+  end
+
+  def process_jobs(data)
+    num_of_workers = [data[:jobs].length, POOL_SIZE].min
+    analyzers = get_analyzers(num_of_workers)
+
+    workers = (num_of_workers).times.map do |worker|
+      Thread.new do
+        begin
+          while analysis = data[:jobs].pop(true)
+            prediction = analyzers[worker].predict(analysis[:profile].testing_array)
+            analysis[:verdict] = prediction.first.to_i == 1 ? 'approved' : 'denied'
+            analysis[:confidence] = prediction.last
+            data[:logs].push(analysis)
+          end
+        rescue ThreadError
+        end
+      end
+    end
+
+    workers.map(&:join)
+    data[:logs]
+  end
+
+  def get_analyzers(num_of_workers)
+    analyzer = Analyzer.new
+
+    analyzers = (num_of_workers).times.map do
+      analyzer.dup
+    end
+
+    analyzers
   end
 end

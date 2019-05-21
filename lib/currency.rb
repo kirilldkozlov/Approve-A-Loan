@@ -41,12 +41,20 @@ class Currency
   end
 
   def fetch_rates(iso)
-    puts 'fetch'
-    uri = URI::HTTP.build(
-      host: SERVICE_HOST,
-      path: SERVICE_PATH,
-      query: "base=#{iso}&symbols=#{USD_ISO},#{USD_ISO}"
-    )
+    query = "base=#{iso}&symbols=#{USD_ISO}"
+    retries = 1
+
+    begin
+      uri = URI::HTTP.build(
+        host: SERVICE_HOST,
+        path: SERVICE_PATH,
+        query: query
+      )
+    rescue OpenURI::HTTPRedirect
+      query = "base=#{iso}&symbols=#{USD_ISO},#{USD_ISO}"
+      retry if (retries -= 1) > 0
+      raise
+    end
 
     uri.read
   end
