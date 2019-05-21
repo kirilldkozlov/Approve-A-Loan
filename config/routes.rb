@@ -18,5 +18,6 @@ Rails.application.routes.draw do
 
   controller :analyzer_api do
     get 'logs', to: 'analyzer_api#logs', as: 'logs'
+    get 'analyze', to: 'analyzer_api#analyze', as: 'analyze'
   end
 end

@@ -41,10 +41,11 @@ class Currency
   end
 
   def fetch_rates(iso)
+    puts 'fetch'
     uri = URI::HTTP.build(
       host: SERVICE_HOST,
       path: SERVICE_PATH,
-      query: "base=#{iso}&symbols=#{USD_ISO}"
+      query: "base=#{iso}&symbols=#{USD_ISO},#{USD_ISO}"
     )
 
     uri.read
