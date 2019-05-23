@@ -32,7 +32,7 @@ class Profile
 
   validates_format_of :telephone, with: /(\([0-9]{3}\)\s[0-9]{3}\s[-]\s[0-9]{4})+\z/
 
-  APPROVED_CURRENCY = %w[USD CAD EUR GBP JPY].freeze
+  APPROVED_CURRENCY = %w[USD CAD].freeze
 
   validates_inclusion_of :currency, in: APPROVED_CURRENCY
 
@@ -161,7 +161,7 @@ class Profile
   end
 
   def update_value(amount)
-    Currency.new(amount, currency).converted_value
+    Currency.new.converted_value(amount, currency)
   end
 
   def loan_amount_update

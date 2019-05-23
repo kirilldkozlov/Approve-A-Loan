@@ -2,6 +2,8 @@ require 'json'
 require 'thread'
 
 class AnalyzerApiController < ApplicationController
+  include QuickProfile
+
   skip_before_action :verify_authenticity_token
   before_action :authenticate_request
 
@@ -9,7 +11,8 @@ class AnalyzerApiController < ApplicationController
 
   def analyze
     data = { jobs: Queue.new, logs: [] }
-    logs = process_jobs(get_jobs(params[:profiles], data)).sort_by { |log| log[:id].to_i }
+    logs = process_jobs(get_jobs(params[:profiles], data)).
+      sort_by { |log| log[:id].to_i }
 
     if logs.empty?
       render json: {
@@ -74,13 +77,14 @@ class AnalyzerApiController < ApplicationController
 
   def get_jobs(queries, data)
     queries.each_with_index do |profile, index|
-      prof = Profile.new(profile_params(profile))
-      analysis = {id: index, process_date: Time.now, profile: prof}
+      profile = profile_params(profile).to_hash
+      validation = QuickProfile.validate(profile)
+      analysis = {id: index, process_date: Time.now, profile: profile}
 
-      if prof.valid?
+      if validation[:result]
         data[:jobs].push(analysis)
       else
-        analysis[:verdict] = "Invalid request"
+        analysis[:verdict] = validation[:message]
         data[:logs].push(analysis)
       end
     end
@@ -89,6 +93,9 @@ class AnalyzerApiController < ApplicationController
   end
 
   def process_jobs(data)
+    lock = Mutex.new
+    currency = Currency.new
+
     num_of_workers = [data[:jobs].length, POOL_SIZE].min
     analyzers = get_analyzers(num_of_workers)
 
@@ -96,10 +103,14 @@ class AnalyzerApiController < ApplicationController
       Thread.new do
         begin
           while analysis = data[:jobs].pop(true)
-            prediction = analyzers[worker].predict(analysis[:profile].testing_array)
+            prediction = analyzers[worker].
+              predict(QuickProfile.to_test_array(currency, analysis[:profile]))
             analysis[:verdict] = prediction.first.to_i == 1 ? 'approved' : 'denied'
-            analysis[:confidence] = prediction.last
-            data[:logs].push(analysis)
+            analysis[:confidence] = "#{(prediction.last.to_f * 100).round(2)}%"
+
+            lock.synchronize {
+              data[:logs].push(analysis)
+            }
           end
         rescue ThreadError
         end
@@ -107,6 +118,7 @@ class AnalyzerApiController < ApplicationController
     end
 
     workers.map(&:join)
+
     data[:logs]
   end
 

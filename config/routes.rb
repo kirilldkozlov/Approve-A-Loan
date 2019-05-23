@@ -20,4 +20,10 @@ Rails.application.routes.draw do
     get 'logs', to: 'analyzer_api#logs', as: 'logs'
     get 'analyze', to: 'analyzer_api#analyze', as: 'analyze'
   end
+
+  controller :benchmark_api do
+    get 'analyze_no_threads',
+      to: 'benchmark_api#analyze_no_threads',
+      as: 'analyze_no_threads'
+  end
 end
