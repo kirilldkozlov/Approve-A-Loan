@@ -74,10 +74,12 @@ class AnalyzerApiController < ApplicationController
   end
 
   def get_jobs(queries, data)
-    queries.each_with_index do |profile, index|
-      profile = profile_params(profile).to_hash
+    len = queries.length - 1
+
+    for i in 0..len do
+      profile = profile_params(queries[i]).to_hash
       validation = QuickProfile.validate(profile)
-      analysis = {id: index, process_date: Time.now, profile: profile}
+      analysis = {id: i, process_date: Time.now, profile: profile}
 
       if validation[:result]
         data[:jobs].push(analysis)
