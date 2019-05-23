@@ -5,7 +5,7 @@ class AnalyzerApiController < ApplicationController
   skip_before_action :verify_authenticity_token
   before_action :authenticate_request
 
-  POOL_SIZE = 10
+  POOL_SIZE = 15
 
   def analyze
     data = { jobs: Queue.new, logs: [] }

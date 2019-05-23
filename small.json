@@ -1,0 +1,44 @@
+{
+	"profiles": [
+		{
+		    "name": "Kirill",
+				"currency": "CAD",
+				"age": 22,
+				"telephone": "(647) 888 - 8888",
+				"relationship_and_sex": 3,
+				"property_status": 1,
+				"housing_status": 1,
+				"job_status": 3,
+				"foreign_worker": 0,
+				"employment_length": 4,
+				"loan_duration_months": 24,
+				"loan_purpose": 1,
+				"chequing_balance": 10000,
+				"loan_amount": 1400,
+				"other_debtors_guarantors": 2,
+				"credit_history": 0,
+				"other_loans": 1,
+				"value_of_savings": 10000
+	  },
+				{
+		    "name": "Kirill",
+				"currency": "CAD",
+				"age": 22,
+				"telephone": "(647) 888 - 8888",
+				"relationship_and_sex": 3,
+				"property_status": 4,
+				"housing_status": 1,
+				"job_status": 1,
+				"foreign_worker": 0,
+				"employment_length": 4,
+				"loan_duration_months": 24,
+				"loan_purpose": 0,
+				"chequing_balance": 1,
+				"loan_amount": 200000,
+				"other_debtors_guarantors": 1,
+				"credit_history": 3,
+				"other_loans": 1,
+				"value_of_savings": 1
+	  }
+	]
+}
