@@ -15,18 +15,18 @@ curl -s -H "Content-Type: application/json" -H "Authorization: ${AUTH}" -X GET  
 
 echo 'Starting Benchmark test:'
 
-# Payload of 300, 5 times
+# Payload of 300, 4 times
 
-for i in {1..5}
+for i in {1..4}
 do
   curl -w "$i: Response: %{http_code}, Total time: %{time_total}\n" --output /dev/null -H "Content-Type: application/json" -H "Authorization: ${AUTH}" -s -X GET -d @payload.json http://localhost:3000/analyze_no_threads
 done
 
 echo 'Starting thread test:'
 
-# Payload of 300, 5 times
+# Payload of 300, 4 times
 
-for i in {1..5}
+for i in {1..4}
 do
   curl -w "$i: Response: %{http_code}, Total time: %{time_total}\n" -s --output /dev/null -H "Content-Type: application/json" -H "Authorization: ${AUTH}" -X GET  -d @payload.json http://localhost:3000/analyze
 done
