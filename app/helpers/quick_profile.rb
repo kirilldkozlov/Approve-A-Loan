@@ -1,4 +1,6 @@
 module QuickProfile
+  include Currency
+
   def self.validate(query)
     failures = []
     base = "Invalid request."
@@ -20,13 +22,13 @@ module QuickProfile
     { result: true }
   end
 
-  def self.to_test_array(currency, profile)
+  def self.to_test_array(profile)
     [
       profile["chequing_balance"],
       profile["loan_duration_months"],
       profile["credit_history"],
       profile["loan_purpose"],
-      currency.converted_value(profile["loan_amount"], profile[:currency]),
+      Currency.converted_value(profile["loan_amount"], profile[:currency]),
       profile["value_of_savings"],
       profile["employment_length"],
       profile["relationship_and_sex"],

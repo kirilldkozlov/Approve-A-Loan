@@ -2,8 +2,6 @@ require 'json'
 require 'thread'
 
 class AnalyzerApiController < ApplicationController
-  include QuickProfile
-
   skip_before_action :verify_authenticity_token
   before_action :authenticate_request
 
@@ -94,7 +92,6 @@ class AnalyzerApiController < ApplicationController
 
   def process_jobs(data)
     lock = Mutex.new
-    currency = Currency.new
 
     num_of_workers = [data[:jobs].length, POOL_SIZE].min
     analyzers = get_analyzers(num_of_workers)
@@ -104,7 +101,7 @@ class AnalyzerApiController < ApplicationController
         begin
           while analysis = data[:jobs].pop(true)
             prediction = analyzers[worker].
-              predict(QuickProfile.to_test_array(currency, analysis[:profile]))
+              predict(QuickProfile.to_test_array(analysis[:profile]))
             analysis[:verdict] = prediction.first.to_i == 1 ? 'approved' : 'denied'
             analysis[:confidence] = "#{(prediction.last.to_f * 100).round(2)}%"
 

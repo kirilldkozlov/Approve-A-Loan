@@ -161,7 +161,7 @@ class Profile
   end
 
   def update_value(amount)
-    Currency.new.converted_value(amount, currency)
+    Currency.converted_value(amount, currency)
   end
 
   def loan_amount_update
