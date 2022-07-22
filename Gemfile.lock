@@ -207,7 +207,7 @@ GEM
     turbolinks (5.2.0)
       turbolinks-source (~> 5.2)
     turbolinks-source (5.2.0)
-    tzinfo (1.2.5)
+    tzinfo (1.2.10)
       thread_safe (~> 0.1)
     tzinfo-data (1.2019.1)
       tzinfo (>= 1.0.0)
@@ -237,7 +237,6 @@ DEPENDENCIES
   bootstrap-sass (~> 3.4.1)
   capybara (~> 2.13)
   coffee-rails (~> 4.2)
-  concurrent-ruby
   decisiontree
   font-awesome-rails
   jbuilder (~> 2.5)
